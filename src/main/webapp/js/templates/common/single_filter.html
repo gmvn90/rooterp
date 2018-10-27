@@ -1,0 +1,10 @@
+<td width="190px">
+    <input id="{{:type}}_filtertext" type="text" style="width: 190px" class="text_filter_child">
+    <ul id="{{:type}}_filter" class="filter">
+        {{if selected == true}}
+        <li id="{{:id}}" chosen>{{:name}}</li>
+        {{else}}
+        <li id="{{:id}}">{{:name}}</li>
+        {{/if}}
+    </ul>
+</td>

@@ -1,0 +1,23 @@
+<!-- BEGIN:list -->
+<li class="{class}" id="{id}">{value}</li>
+<!-- END: list -->
+
+<!-- BEGIN:waypoint -->
+<script>
+    $(document).ready(function() {
+        $(".{waypoint_class}.hotpoint").waypoint(function(direction) {
+            if (direction === "down") {
+                //console.log(direction);
+            }
+        }, {context: '.ref_list',
+            offset: "100%"
+        });
+    });
+</script>
+<!-- END:waypoint -->
+
+<!-- BEGIN: alert -->
+<script>
+    $.success("{message}");
+</script>
+<!-- END: alert -->

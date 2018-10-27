@@ -1,0 +1,58 @@
+<!-- BEGIN:breadcrumbs -->
+<ul id="breadcrum_list" style="float: left">
+    <!-- BEGIN:link -->
+    <li><a class="breadcrum_link" href="#" onclick='goTo({id})'>{name}</a><span {class} ></span></li>
+    <!-- END:link -->
+    <!-- BEGIN:link_not_href -->
+    <li style="font-size: 13px">{name}</li>
+    <!-- END:link_not_href -->
+</ul>
+<div style="float: right; height: 100%">
+        <img class="border_1_solid_black profile_picture" src="images/maleLogo.jpg" width="30px" height="30px" style="display: inline-block;"/>
+        <div style="display: inline-block; vertical-align: top; margin-top: 10px">
+            <a href="#" class="bold" id="span_fullname" onclick="goTo({profile})">{username}</a>
+        <a href="#" onclick='logout()' >(Logout)</a>
+        </div>
+    </div>
+<!-- END:breadcrumbs -->
+
+<!-- BEGIN:menu -->
+<div id="menu_background1">
+    <ul class="menu" id="menu_lv1">
+        <!-- BEGIN:lv1 -->
+        <li {class} ><a {home} href="#" onclick='goTo({id})' >{name}</a></li>
+        <!-- END:lv1 -->
+    </ul>
+</div>
+<div id="menu_background2">
+    <ul class="menu" id="menu_lv2">
+        <!-- BEGIN:lv2 -->
+        <li><a {class} href="#" onclick='goTo({id})' >{name}</a>
+            {lv3}
+        </li>
+        <!-- END:lv2 -->
+    </ul>
+</div>
+<!-- END:menu -->
+
+<!-- BEGIN:lv3 -->
+<ul class="menu_lv3">
+    <!-- BEGIN:lv3list -->
+    <li><a href="#" onclick='goTo({id})'>{name}</a></li>
+    <!-- END:lv3list -->
+</ul>
+<!-- END:lv3 -->
+
+<!-- BEGIN:disabled_menu -->
+<div id="disabled_menu_background1">
+    <ul class="disabled_menu" id="disabled_menu_lv1">
+        <!-- BEGIN:lv1 -->
+        <li><a {home}>{name}</a></li>
+        <!-- END:lv1 -->
+    </ul>
+</div>
+<div id="disabled_menu_background2">
+    <ul class="disabled_menu" id="disabled_menu_lv2">
+    </ul>
+</div>
+<!-- END:disabled_menu -->

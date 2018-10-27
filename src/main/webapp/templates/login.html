@@ -1,0 +1,76 @@
+<!-- BEGIN: login -->
+<style>
+    table#new_movement input, table#new_movement select { width: 100%;}
+    #detailBox {width: 350px; margin-left: auto; margin-right: auto;}
+</style>
+<h3>Login</h3>
+<table class="percentage_80 center" id="tbl_login" cellpadding="10">
+    <tr>
+        <td colspan="2"><span class="left_element" style="text-align: center; color: red; width: 100%" id="message"></span></td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Username</span>
+        </td>
+        <td class="alignRight">
+            <input type="text" id="username" name="username" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Password</span>
+        </td>
+        <td class="alignRight">
+            <input type="password" id="txt_password" name="txt_password"/>
+            <input type="hidden" id="password" name="password" />
+        </td>
+    </tr>
+</table>
+<div style="width: 100%; margin: 20px auto auto auto;">
+    <input type="button" value="Close" class='close_opacity' style='float: right; margin-right: 60px'/>
+    <input type="button" value="Login" class="btn_submit" id="login" style='float: left; margin-left: 60px'/>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tbl_login input[id=username]').focus();
+        $('#login').click(function() {
+            login();
+        });
+
+        $('#txt_password').keypress(function(event) {
+            if (event.which === 13) {
+                event.preventDefault();
+                login();
+            }
+        });
+    });
+
+    function login() {
+        $('#password').val($.md5($('#txt_password').val()));
+        $.ajax({
+            type: 'POST',
+            cache: false,
+            data: {username: $('#username').val(), password: $('#password').val()},
+            url: getAbsolutePath() + "/login_by_dialog.htm",
+            success: function(data) {
+                if (data !== null) {
+                    var responseData = JSON.parse(data);
+                    if (responseData.msg !== null) {
+                        $('#message').text(responseData.msg);
+                    } else {
+                        $("#span_fullname").text(responseData.fullName);
+                        closeOpacity();
+                    }
+                } else {
+                    closeOpacity();
+                }
+            }
+        }).done(function() {
+            $("#preloader").remove();
+            $("#overlay").remove();
+                closeOpacity();
+        });
+    }
+</script>
+<!-- END: login -->

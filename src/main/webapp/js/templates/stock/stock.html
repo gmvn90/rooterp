@@ -1,0 +1,264 @@
+<table class="sStorage" id="table-1">
+    <tbody>
+    <script>
+        var tableOffset = $("#table-1").offset().top;
+        var $header = $("#header-fixed").clone();
+        var $fixedHeader = $("#header-fixed").append($header);
+
+        $(window).bind("scroll", function () {
+            var offset = $(this).scrollTop();
+
+            if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
+                $fixedHeader.show();
+            }
+            else if (offset < tableOffset) {
+                $fixedHeader.hide();
+            }
+        });
+    </script>
+    <style>
+        #header-fixed {
+            position: fixed;
+            top: 0px; display: none;
+            background-color:white;
+            width: 1875px;
+        }
+    </style>
+    <tr class="sHead" id="header-normal">
+        <!--<td width="15px"></td>-->
+        <td width="35px">No</td>
+        <td width="70px">client</td>
+        <td width="70px">pledge</td>
+        <td class="sWidth60">Area</td>
+        <td width="110px">Allocation Ref.</td>
+        <td width="125px">WN Ref.</td>
+        <td width="80px">Tons</td>
+        <td width="40px">Num</td>
+        <td width="100px">Packing</td>
+        <td width="80px">In Date</td>
+        <td class="sWidth60">Blacks</td>
+        <td class="sWidth60">Brown</td>
+        <td class="sWidth60">FM</td>
+        <td class="sWidth60">Broken</td>
+        <td class="sWidth60">Moist.</td>
+        <td class="sWidth60">O.Crop</td>
+        <td class="sWidth60">Moldy</td>
+        <td class="sWidth60">Cup</td>
+        <td class="sWidth60">SC 20+</td>
+        <td class="sWidth60">SC 20</td>
+        <td class="sWidth60">SC 19</td>
+        <td class="sWidth60">SC 18</td>
+        <td class="sWidth60">SC 17</td>
+        <td class="sWidth60">SC 16</td>
+        <td class="sWidth60">SC 15</td>
+        <td class="sWidth60">SC 14</td>
+        <td class="sWidth60">SC 13</td>
+        <td class="sWidth60">SC 12</td>
+        <td class="sWidth60">SC 12-</td>
+    </tr>
+    <tr class="sHead" id="header-fixed" style="font-size: 10px">
+        <!--<td width="15px"></td>-->
+        <td width="35px">No</td>
+        <td width="65px">client</td>
+        <td width="65px">pledge</td>
+        <td width="50px">Area</td>
+        <td width="100px">Allocation Ref.</td>
+        <td width="110px">WN Ref.</td>
+        <td width="70px">Tons</td>
+        <td width="40px">Num</td>
+        <td width="100px">Packing</td>
+        <td width="80px">In Date</td>
+        <td class="sWidth60">Blacks</td>
+        <td class="sWidth60">Brown</td>
+        <td class="sWidth60">FM</td>
+        <td class="sWidth60">Broken</td>
+        <td width="70px">Moist.</td>
+        <td class="sWidth60">O.Crop</td>
+        <td class="sWidth60">Moldy</td>
+        <td class="sWidth60">Cup</td>
+        <td class="sWidth60">SC 20+</td>
+        <td class="sWidth60">SC 20</td>
+        <td class="sWidth60">SC 19</td>
+        <td class="sWidth60">SC 18</td>
+        <td class="sWidth60">SC 17</td>
+        <td class="sWidth60">SC 16</td>
+        <td class="sWidth60">SC 15</td>
+        <td class="sWidth60">SC 14</td>
+        <td class="sWidth60">SC 13</td>
+        <td class="sWidth60">SC 12</td>
+        <td class="sWidth60">SC 12-</td>
+    </tr>
+    {{for storage}}
+    <tr class="sTitle graderow" id="gradeRow_{{:id}}">
+        <td colspan="29">
+            <!--<input type="checkbox" id="checkAllGrade_{{:id}}" class="grade_check_box" style="margin-left: -17px;margin-right: 10px;"/>-->
+            <a class="expandCollapse mpcth-icon-minus"></a>
+            {{:grade}}
+        </td> 
+    </tr>
+    {{for wns}}
+    <tr class="sBody wn_{{:grade_id}}">
+        <!--<td width="15px"><input type="checkbox" id="wn_{{:wn_id}}" class="wn_check_boxes wn_check_grade_{{:grade_id}}"/></td>-->
+        <td width="35px">{{:count}}</td>
+        <td width="70px">{{:client}}</td>
+        <td width="70px">{{:pledge}}</td>
+        <td class="sWidth60">{{:area}}</td>
+        <td width="110px">{{:allocation_ref}}</td>
+        <td width="125px">{{:ref_number}}</td>
+        <td width="80px" class="tons_{{:grade_id}} formatNumber3">{{:tons}}</td>
+        <td width="40px">{{:num}}</td>
+        <td width="100px">{{:packing}}</td>
+        <td width="80px">{{:in_date}}</td>
+        <td class="sWidth60 formatNumber">{{:black}}</td>
+        <td class="sWidth60 formatNumber">{{:brown}}</td>
+        <td class="sWidth60 formatNumber">{{:fm}}</td>
+        <td class="sWidth60 formatNumber">{{:broken}}</td>
+        <td class="sWidth60 formatNumber">{{:moist}}</td>
+        <td class="sWidth60 formatNumber">{{:ocrop}}</td>
+        <td class="sWidth60 formatNumber">{{:moldy}}</td>
+        <td class="sWidth60 formatNumber">{{:cup}}</td>
+        <td class="sWidth60 formatNumber">{{:asc20}}</td>
+        <td class="sWidth60 formatNumber">{{:sc20}}</td>
+        <td class="sWidth60 formatNumber">{{:sc19}}</td>
+        <td class="sWidth60 formatNumber">{{:sc18}}</td>
+        <td class="sWidth60 formatNumber">{{:sc17}}</td>
+        <td class="sWidth60 formatNumber">{{:sc16}}</td>
+        <td class="sWidth60 formatNumber">{{:sc15}}</td>
+        <td class="sWidth60 formatNumber">{{:sc14}}</td>
+        <td class="sWidth60 formatNumber">{{:sc13}}</td>
+        <td class="sWidth60 formatNumber">{{:sc12}}</td>
+        <td class="sWidth60 formatNumber">{{:bsc12}}</td>
+    <input type='hidden' class="sWidth60 black_tons_{{:grade_id}}" value="{{:black_tons}}" />
+    <input type='hidden' class="sWidth60 brown_tons_{{:grade_id}}" value='{{:brown_tons}}' />
+    <input type='hidden' class="sWidth60 fm_tons_{{:grade_id}}" value='{{:fm_tons}}' />
+    <input type='hidden' class="sWidth60 broken_tons_{{:grade_id}}" value='{{:broken_tons}}' />
+    <input type='hidden' class="sWidth60 moist_tons_{{:grade_id}}" value='{{:moist_tons}}' />
+    <input type='hidden' class="sWidth60 ocrop_tons_{{:grade_id}}" value='{{:ocrop_tons}}' />
+    <input type='hidden' class="sWidth60 moldy_tons_{{:grade_id}}" value='{{:moldy_tons}}' />
+    <input type='hidden' class="sWidth60 asc20_tons_{{:grade_id}}" value='{{:asc20_tons}}' />
+    <input type='hidden' class="sWidth60 sc20_tons_{{:grade_id}}" value='{{:sc20_tons}}' />
+    <input type='hidden' class="sWidth60 sc19_tons_{{:grade_id}}" value='{{:sc19_tons}}' />
+    <input type='hidden' class="sWidth60 sc18_tons_{{:grade_id}}" value='{{:sc18_tons}}' />
+    <input type='hidden' class="sWidth60 sc17_tons_{{:grade_id}}" value='{{:sc17_tons}}' />
+    <input type='hidden' class="sWidth60 sc16_tons_{{:grade_id}}" value='{{:sc16_tons}}' />
+    <input type='hidden' class="sWidth60 sc15_tons_{{:grade_id}}" value='{{:sc15_tons}}' />
+    <input type='hidden' class="sWidth60 sc14_tons_{{:grade_id}}" value='{{:sc14_tons}}' />
+    <input type='hidden' class="sWidth60 sc13_tons_{{:grade_id}}" value='{{:sc13_tons}}' />
+    <input type='hidden' class="sWidth60 sc12_tons_{{:grade_id}}" value='{{:sc12_tons}}' />
+    <input type='hidden' class="sWidth60 bsc12_tons_{{:grade_id}}" value='{{:bsc12_tons}}' />
+</tr>
+{{/for}}
+<tr class="sTotal">
+    <td colspan="6">Total {{:grade}}</td>
+    <td width="80px" class="grade_total_tons formatNumber3" id="total_tons_{{:id}}"></td>
+    <td colspan="3"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_black_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_brown_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_fm_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_broken_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_moist_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_ocrop_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_moldy_{{:id}}"></td>
+    <td class="sWidth60 formatNumber"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_asc20_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc20_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc19_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc18_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc17_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc16_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc15_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc14_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc13_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_sc12_{{:id}}"></td>
+    <td class="sWidth60 formatNumber" id="wtAvg_bsc12_{{:id}}"></td>
+</tr>
+{{/for}}
+<!-- Group: End -->
+</tbody>
+</table>
+<table class="sStorage">
+    <tr class="sFoot">
+        <td width="450px">Total Storage</td>
+        <td width="80px" class="total_tons formatNumber3"></td>
+        <td colspan="4"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+    </tr>
+</table>
+{{if client == false}}
+<div id="ip_section">
+    <table class="sIP">
+        <tr class="sHead">
+            <td width="110px">In-Process</td>
+            <td width="300px">Client</td>
+            <td width="80px">Tons</td>
+        </tr>
+        <!-- Group -->
+        {{for pis}}
+        <tr class="sTitle processing" id="pi_{{:id}}">
+            <td width="110px">{{:ref}}</td>
+            <td colspan="2">{{:client_name}}</td>
+        </tr>
+        <tr class="sBody">
+            <td style="text-align: right">Inprocess</td>
+            <td></td>
+            <td id="ip_{{:id}}" class="formatNumber3">{{:inprocess}}</td>
+        </tr>
+        <tr class="sBody">
+            <td style="text-align: right">Exprocess</td>
+            <td colspan="2"></td>
+        </tr>
+        {{for exprocess}}
+        <tr class="sBody">
+            <td></td>
+            <td class="xp_grade">{{:grade}}</td>
+            <td class="xp_tons_{{:pi_id}} formatNumber3">{{:tons}}</td>
+        </tr>
+        {{/for}}
+        <tr class="sTotal">
+            <td>Total {{:ref}}</td>
+            <td></td>
+            <td id="total_pi_tons_{{:id}}" class="formatNumber3"></td>
+        </tr>
+        {{/for}}
+        <!-- Group: end -->
+        <tr class="sFoot">
+            <td>Total In-process</td>
+            <td></td>
+            <td style="padding-left: 0" class="total_pi formatNumber3"></td>
+        </tr>
+    </table>
+    <table class="sSummarize">
+        <tr class="sBody">
+            <td style="font-size: 12px !important; text-align: left !important; padding-left: 5px !important">Total Storage</td>
+            <td width="80px" style=" font-size: 12px !important" class="total_tons formatNumber3" id="total_storage_summarize"></td>
+        </tr>
+        <tr class="sBody">
+            <td style="font-size: 12px !important; text-align: left !important; padding-left: 5px !important">Total In-process</td>
+            <td style=" font-size: 12px !important" class="total_pi formatNumber3" id="total_ip_summarize">0</td>
+        </tr>
+        <tr class="sFoot">
+            <td>Total</td>
+            <td style="text-align: center; padding-left: 0" class="formatNumber3" id="total_stock">0</td>
+        </tr>
+    </table>
+</div>
+{{/if}}
+

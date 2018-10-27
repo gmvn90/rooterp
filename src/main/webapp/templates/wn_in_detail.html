@@ -1,0 +1,38 @@
+<!-- BEGIN: main -->
+
+<table class="wn_in_detail">
+    <thead>
+        <tr>
+            <th width="150px">
+                Weight Note Receipt
+            </th>
+            <th width="80px">
+                Gross Weight
+            </th>
+            <th width="80px">
+                Tare Weight
+            </th>
+            <th width="80px">
+                Net Weight
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <!-- BEGIN: row -->
+    <tr>
+        <td>{ref_number}</td>
+        <td>{gross}</td>
+        <td>{tare}</td>
+        <td>{net}</td>
+        <td><input type="checkbox" id="ck_wnr_{id}" class="ck_wnr"></td>
+    </tr>
+    <!-- END: row -->
+    </tbody>
+</table>
+<input type="hidden" id="dialog_wn_id" value="{wn_id}"/>
+<input type="button" id="{function}_wnr" value="{value}" style="float: right; margin-right: 15px" name="perm_52"/>
+<input type="button" id="close_dialog" value="Close"/>
+<script>
+</script>
+<!-- END: main -->

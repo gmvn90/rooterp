@@ -1,0 +1,164 @@
+.line{
+    display: inline-block !important;
+    width: 100%;
+    margin: 2px 0px 2px 0px;
+}
+li .left_element{
+    display: inline-block;
+    margin: 2px 0px 2px 0px;
+}
+
+li .right_element{
+    float: right;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+li .mid_element{
+    display: inline-block;
+    margin-right: 2px;
+    margin-left: 20px;
+}
+
+div .h3title{
+    padding-left: 25px;
+    margin-top: 20px;
+}
+
+div .column{
+    float: left;
+    width: 290px;
+    margin-left: 10px;
+}
+li .mostright{
+    text-align: right;
+}
+
+.today{
+    height: 15px;
+}
+
+.horizontal_line{
+    border-bottom: 1px solid black;
+    height: 1px;
+    width: 100%;
+    float: right;
+}
+
+.dropdown{
+    width: 153px;
+}
+
+.dropdown_import{
+    width: 133px;
+}
+
+.txt_box_table{
+    width: 109px;
+}
+
+.txt_box_table_import{
+    width: 92px;
+}
+
+.button_thin{
+    height: 26px;
+    width: 100%;
+}
+.txt_right_align{
+    text-align: right;
+}
+legend{
+    font-weight: bold; 
+}
+
+.bottom_line{
+    border-bottom: 1px solid black;
+}
+
+.no_padding_bottom{
+    padding-bottom: 0px;
+}
+
+tr.no_padding_bottom td{
+    padding-bottom : 2px;
+}
+
+.no_padding_top{
+    padding-top : 0px;
+}
+
+tr.no_padding_top td{
+    padding-top: 2px;
+}
+
+.no_padding{
+    padding : 0px !important;
+}
+tr.no_padding td{
+    padding : 0px !important;
+}
+
+table.table_border_full_head
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.table_border_full_head th, table.table_border_full_head td
+{
+    padding: 5px;
+}
+
+table.table_border_full_head thead 
+{
+    border: 1px solid grey;
+}
+
+table.table_border_full_body
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.table_border_full_body th, table.table_border_full_body td
+{
+    padding: 5px;
+}
+
+table.table_border_full_body tbody 
+{
+    border: 1px solid grey;
+}
+
+.width_90px{
+    width: 90px;
+}
+
+.width_105px{
+    width: 105px;
+}
+
+.small_button {
+   min-width: 50px !important;
+   width: 50px !important;
+}
+.no_padding_left{
+    padding-left: 0px;
+}
+
+.bought, .import_mov {
+    background-color: #dbd7f8;
+}
+
+.bought_complete {
+    background-color: #e3e9f7;
+}
+
+.sold, .export_mov {
+    background-color: #e3dcb5;
+}
+
+.sold_complete, .imex_mov {
+    background-color: #f3ecc5;
+}

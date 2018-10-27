@@ -1,0 +1,60 @@
+<thead>
+    <tr>
+        {{if reweight == true}}
+        <th width="88px">Re-weight</th>
+        {{/if}}
+        {{if client == true}}
+        <th>Client</th>
+        {{/if}}
+        {{if pledge == true}}
+        <th>Pledge</th>
+        {{/if}}
+        {{if area == true}}
+        <th>Area</th>
+        {{/if}}
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        {{if reweight == true}}
+        <td><input type='checkbox' name='reweight_all' id='reweight_all'/></td>
+<script>
+    var noreweight = false;
+</script>
+{{else}}
+<script>
+    var noreweight = true;
+    $(document).ready(function() {
+        $("th.rwr").each(function() {
+            $(this).remove();
+        });
+    });
+</script>
+{{/if}}
+{{if client == true}}
+<td width="70px" style="margin-left: 20px"><select id="update_client"></select></td>
+<script>
+    $(document).ready(function() {
+        generateSelection("#update_client", "UpdateClient", "client_-1", {
+            all: true, action: "getClientList", type: "select", prefix: "client_", allText: ""
+        });
+    });
+</script>
+{{/if}}
+{{if pledge == true}}
+<td width="70px"><select id="update_pledge"></select></td>
+<script>
+    $(document).ready(function() {
+        generateSelection("#update_pledge", "UpdatePledge", "pledge_-1", {
+            all: true, action: "getPledgeList", type: "select", prefix: "pledge_", allText: ""
+        });
+    });
+</script>
+{{/if}}
+{{if area == true}}
+<td><input type="text" id="areaCode" readonly="" style="width: 60px"/><a href="javascript:void(0);" class="clear_text">clear</a></td>
+{{/if}}
+<td><input type="button" id="move_selected" class="hid" style="float: left; margin-left: 20px;" value="Move"/></td>
+</tr>
+</tbody>

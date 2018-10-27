@@ -1,0 +1,50 @@
+	<tr class="sHead">
+		<td width="110px">Ref. Number</td>
+		<td width="300px">Client</td>
+		<td width="80px">Tons</td>
+		<td width="80px">Cost</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Inprocess</th>
+		<td colspan="3"></td>
+	</tr>
+	{{for ips ~id=id}}
+	<tr class="sBody">
+		<td></td>
+		<td class="ip_grade">{{:grade}}</td>
+		<td class="ip_tons_{{:~id}} formatNumber">{{:tons}}</td>
+		{{if discount == true && (processingType != 1 || processingType != 10)}}
+		<td class="ip_cost_{{:~id}} formatNumber">{{:cost}}</td>
+		{{else}}
+		<td class="ip_cost_{{:~id}} formatNumber">0</td>
+		{{/if}}
+	</tr>
+	{{/for}}
+	<tr>
+		<th style="text-align: right; border-top: 1px solid black; padding-top: 10px">Exprocess</th>
+		<td colspan="3" style="border-top: 1px solid black; padding-top: 10px"></td>
+	</tr>
+	{{for xps ~id=id}}
+	<tr class="sBody">
+		<td></td>
+		<td class="xp_grade">{{:grade}}</td>
+		<td class="xp_tons_{{:~id}} formatNumber">{{:tons}}</td>
+		{{if processingType == 1 || processingType == 10 }}
+		<td class="xp_cost_{{:~id}} formatNumber">0</td>
+		{{else}}
+		<td class="xp_cost_{{:~id}} formatNumber">{{:cost}}</td>
+		{{/if}}
+	</tr>
+	{{/for}}
+	<tr class="sTotal">
+		<td>Total</td>
+		<td></td>
+		<td id="total_pi_tons_{{:id}}" class="formatNumber"></td>
+		<td id="total_pi_costs_{{:id}}" class="formatNumber"></td>
+	</tr>
+	<tr class="sTotal">
+		<td style="border-top: none !important">Grand</td>
+		<td style="border-top: none !important"></td>
+		<td style="border-top: none !important"></td>
+		<td id="grand_pi_costs_{{:id}}" class="formatNumber" style="border-top: none !important"></td>
+	</tr>

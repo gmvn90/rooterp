@@ -1,0 +1,171 @@
+<div class="right border" style="width: 1200px;height: auto; overflow: hidden; min-height: 650px">
+    <div style="width: 100%; overflow: hidden; height: auto; padding-bottom: 10px">
+        <table class="table_filter" width="200px" style="float: left; margin: 10px 0 0 10px">
+            <thead>
+                <tr style="font-size: 13px">
+                    <th width="100px">Type</th>
+                    <th width="190px">Reference Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" class="text_filter_child">
+                        <ul id="type_filter" class="filter" name="perm_40">
+                            {{if instType == "IM"}}
+                            <li id="inst_type_IM" class="chosen">Import</li>
+                            {{else}}
+                            <li id="inst_type_IM">Import</li>
+                            {{/if}}
+                            {{if instType == "EX"}}
+                            <li id="inst_type_EX" class="chosen">Export</li>
+                            {{else}}
+                            <li id="inst_type_EX">Export</li>
+                            {{/if}}
+                        </ul>
+                    </td>
+                    <td>
+                        <input type="text" style="width: 190px" class="text_filter_child">
+                        <ul id="instruction_ref_filter" class="filter">
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="wr_info" style="float: right; height: auto; overflow: hidden; min-height: 250px;width: 800px; padding-top: 15px">
+            <div class="pc100">
+                <div class="pc40 left cell">
+                    <span class="right label">Date</span>
+                </div>
+                <div class="pc50 left cell">
+                    <input type="text" style="width: 150px" id="wr_date" name="wr_date" value="{{:date}}" readonly=""/>
+                </div>
+            </div>
+            <div class="pc100">
+                <div class="pc40 left cell">
+                    <span class="right label">Origin</span>
+                </div>
+                <div class="pc50 left cell">
+                    <span class="label">Vietnam</span>
+                </div>
+            </div>
+            <div class="pc100">
+                <div class="pc40 left cell">
+                    <span class="right label">Quality</span>
+                </div>
+                <div class="pc50 left cell">
+                    <span class="label">Robusta</span>
+                </div>
+            </div>
+            <div class="pc100">
+                <div class="pc40 left cell">
+                    <span class="right label">Grade</span>
+                </div>
+                <div class="pc50 left cell">
+                    <span class="label">{{:grade}}</span>
+                </div>
+            </div>
+            <div class="pc100">
+                <div class="pc40 left cell">
+                    <span class="right label">Supplier/Buyer</span>
+                </div>
+                <div class="pc50 left cell">
+                    <span class="label">{{:supplier}}</span>
+                </div>
+            </div>
+            <div class="pc100">
+                <div class="pc40 left cell">
+                    <span class="right label">Remark</span>
+                </div>
+                <div class="pc50 left cell">
+                    <textarea id="remark" rows="4" cols="50">
+                                        {{:remark}}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right" style="width: 1200px;height: auto; overflow: hidden; min-height: 400px; border-top: 1px solid #B8C2CC">
+        {{if status == 0}}
+        <fieldset id="weight_note_table" class="wn_container" style="clear: both;width: 100%; overflow: hidden; height: auto; min-height: 200px; border-bottom: 1px solid #B8C2CC; padding-bottom: 10px">
+            <legend>WN Table</legend>
+            <table id="WN_table">
+                <thead>
+                    <tr>
+                        <th width="200px">WeightNote Reference</th>
+                        <th width="100px">Status</th>
+                        <th width="200px">Quality Report Reference</th>
+                        <th width="100px">Status</th>
+                        <th width="250px">Grade</th>
+                        <th width="100px">Number Of Bags</th>
+                        <th width="100px">Tons</th>
+                        <th width="100px">Select</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <th width="200px"></th>
+                        <th width="100px"></th>
+                        <th width="200px"></th>
+                        <th width="100px"></th>
+                        <th width="250px"></th>
+                        <th width="100px"></th>
+                        <th width="100px"></th>
+                        <th width="100px"></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </fieldset>
+        {{/if}}
+        <fieldset id="selected_weight_note" class="wn_container" style="clear: both;width: 100%; overflow: hidden; height: auto; min-height: 200px; border-bottom: 1px solid #B8C2CC; padding-bottom: 10px">
+            <legend>Selected WN</legend>
+            <table id="selected_table">
+                <thead>
+                    <tr>
+                        <th width="200px">WeightNote Reference</th>
+                        <th width="100px">Status</th>
+                        <th width="200px">Quality Report Reference</th>
+                        <th width="100px">Status</th>
+                        <th width="250px">Grade</th>
+                        <th width="100px">Number Of Bags</th>
+                        <th width="100px">Tons</th>
+                        <th width="100px">Select</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th width="200px"></th>
+                        <th width="100px"></th>
+                        <th width="200px"></th>
+                        <th width="100px"></th>
+                        <th width="250px"></th>
+                        <th width="100px"></th>
+                        <th width="100px"></th>
+                        <th width="100px"></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </fieldset>
+        <table>
+            <tr>
+                <td>Weight Controller</td>
+                <td><select id="weight_controller"></select></td>
+            </tr>
+            <tr>
+                <td>Quality Controller</td>
+                <td><select id="quality_controller"></select></td>
+            </tr>
+            <tr>
+                <td>Completed</td>
+                {{if status == 0}}
+                <td><input type="checkbox" id="wr_status" value="0"/></td>
+                {{else status == 1}}
+                <td><input type="checkbox" id="wr_status" value="1" checked=""/></td>
+                {{/if}}
+            </tr>
+        </table>
+    </div>
+</div>
+

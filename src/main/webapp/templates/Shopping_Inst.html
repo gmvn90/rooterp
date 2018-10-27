@@ -1,0 +1,549 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../styles/960.css"/>
+        <link rel="stylesheet" href="../styles/common.css"/>
+    </head>
+    <body>
+        <div id="wrapper" class='container_12' style='width: 1000px !important'>
+            <div class="grid_2" style="width: 160px !important; margin-left: 0px; margin-right: 5px">
+                <div>
+                    <label>SI Ref</label>
+                </div>
+                <div class="border" style="height: 300px">
+                    <input style="width: 96%; margin-top: 0px; margin-bottom: 1px;" type="text" name="txtDIRef" value="" />
+                    <div class="textAlignLeft">
+                        <ul>
+                            <li>SWC</li>
+                            <li>SWC2</li>
+                            <li>SWC3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Add" />
+                    <input type="submit" value="Del" />
+                </div>
+            </div>
+            <div class="grid_10 main_container" style="width: 818px !important;margin-left: 0px; margin-right: 5px">
+                <span>Detail</span>
+                <div class="pc100" style="height: 450px">
+                    <div class="pc50 left cell">
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Client</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcClient" style="width: 100%">
+                                    <option>HighLands</option>
+                                    <option>StarBucks</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Client Ref</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 97%" name="txtClientRef" value="" />
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">SI Ref</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <span >SWC2</span>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Created Date</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <span >20-Jul-2013</span>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Supplier</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcSupplier" style="width: 100%">
+                                    <option>KienDN</option>
+                                    <option>MinhDN</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Origin</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcOrigin" style="width: 100%">
+                                    <option>VietNam</option>
+                                    <option>HongKong</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Quality</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcQuality" style="width: 100%">
+                                    <option>Robusta</option>
+                                    <option>Arabica</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Grade</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcGrade" style="width: 100%">
+                                    <option>Grade1</option>
+                                    <option>Grade2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Contract Quantity</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 50%" name="txtConTractQuantity" value="" />
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Shipment</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcShipment" style="width: 100%">
+                                    <option>Truck</option>
+                                    <option>Bicycle</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Quantity</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 50%" name="txtQuantity" value="" />Mts
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Loading Date</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 50%" name="txtLoadingDate" value="" />
+                            </div>
+                            <!-- Date picker here -->
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label"></span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <span >From&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To</span>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Shipping Period</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 30%" name="txtFrom" value="" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <!-- Date picker here -->
+                                <input type="text" style="width: 30%" name="txtTo" value="" />
+                                <!-- Date picker here -->
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Service Contract No</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 97%" name="txtServiceContractNo" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc50 right cell">
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Shipper</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcShipper" style="width: 100%">
+                                    <option>MSC</option>
+                                    <option>XKS</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Consignee</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcConsignee" style="width: 100%">
+                                    <option>Consignee1</option>
+                                    <option>Consignee2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Notify Party 1</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcNP1" style="width: 100%">
+                                    <option>NP1_1</option>
+                                    <option>NP1_2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Notify Party 2</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcNP2" style="width: 100%">
+                                    <option>NP2_1</option>
+                                    <option>NP2_2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Shipping line</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcShippingLine" style="width: 100%">
+                                    <option>Line1</option>
+                                    <option>line2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Feeder Vessel</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" name="txtFeeder" value="" />
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">ETS</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 25%" name="txtETS" value="" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ETA
+                                <!-- Date picker here -->
+                                <input type="text" style="width: 25%" name="txtETA" value="" />
+                                <!-- Date picker here -->
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Ocean Vessel</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" name="txtOcean" value="" />
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">ETS</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <input type="text" style="width: 25%" name="txtETS_O" value="" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ETA
+                                <!-- Date picker here -->
+                                <input type="text" style="width: 25%" name="txtETA_O" value="" />
+                                <!-- Date picker here -->
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Port of Loading</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcPortLoad" style="width: 100%">
+                                    <option>4333</option>
+                                    <option>8080</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Place of Delivery</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcPlaceDelivery" style="width: 100%">
+                                    <option>HCMC</option>
+                                    <option>VTC</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Port of Discharge</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcPortDis" style="width: 100%">
+                                    <option>8080</option>
+                                    <option>4300</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Container Status</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcStatus" style="width: 100%">
+                                    <option>Active</option>
+                                    <option>Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Weight Cert. By</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcWeightCert" style="width: 100%">
+                                    <option>WC 1</option>
+                                    <option>WC 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pc100">
+                            <div class="pc50 left cell">
+                                <span class="right label">Quality Cert. By</span>
+                            </div>
+                            <div class="pc50 right cell">
+                                <select name="slcQualityCert" style="width: 100%">
+                                    <option>QC 1</option>
+                                    <option>QC 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc50 left" style="height: 500px">
+
+                    <div class="pc100 cell">
+                        <div class="pc50 left cell">
+                            <span class="right label">Marking on Bags</span><br/>
+                            <span style="line-height: 10px" class="right label italic underline"><a href="">Click here for default value</a></span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <textarea style="width: 575px; height: 50px">
+                                
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="pc100 cell" style='margin-top: 30px'>
+                        <div class="pc50 left cell">
+                            <span class="right label">Freight</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <input style="width: 575px" type="text" name="txtFreight" value="" />
+                        </div>
+                    </div>
+
+                    <div class="pc100 cell">
+                        <div class="pc50 left cell">
+                            <span class="right label">Accessories</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <table class="cuteBorder" style="width: 580px; height: 100px; border: 1px solid black;">
+                                <thead>
+                                    <tr>
+                                        <th>Items</th>
+                                        <th>Unit</th>
+                                        <th>Quantity</th>
+                                        <th>Supplier</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="textAlignRight">Dri-Bags</td>
+                                        <td class="textAlignCenter">Kg</td>
+                                        <td class="textAlignCenter"><input type="text" value="0.0" style="width: 40px"/></td>
+                                        <td><select name="slcAccSupp" style="width: 100%">
+                                                <option>DAK</option>
+                                                <option>XKL 2</option>
+                                            </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textAlignRight">Carton Board</td>
+                                        <td class="textAlignCenter">Pcs</td>
+                                        <td class="textAlignCenter"><input type="text" value="0.0" style="width: 40px"/></td>
+                                        <td><select name="slcAccSupp" style="width: 100%">
+                                                <option>DAK</option>
+                                                <option>XKL 2</option>
+                                            </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textAlignRight">Kraft Paper</td>
+                                        <td class="textAlignCenter">Pcs</td>
+                                        <td class="textAlignCenter"><input type="text" value="0.0" style="width: 40px"/></td>
+                                        <td><select name="slcAccSupp" style="width: 100%">
+                                                <option>DAK</option>
+                                                <option>XKL 2</option>
+                                            </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="pc100 cell" style='margin-top: 80px'>
+                        <div class="pc50 left cell">
+                            <span class="right label">LC No</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <div style="width: 580px">
+                                <input style="width: 100px" type="text" name="txtLCNo" value="" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label>LC Date</label>
+                                <input style="width: 100px" type="text" name="txtLCDate" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc100 cell">
+                        <div class="pc50 left cell">
+                            <span class="right label">Invoice No</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <div style="width: 580px">
+                                <input style="width: 100px" type="text" name="txtIVNo" value="" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;
+                                <label>Invoice Date</label>
+                                <input style="width: 100px" type="text" name="txtIVDate" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc100 cell">
+                        <div class="pc50 left cell">
+                            <span class="right label">B/L Number</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <div style="width: 580px">
+                                <input style="width: 100px" type="text" name="txtBLNo" value="" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label>B/L Date</label>
+                                <input style="width: 100px" type="text" name="txtBLDate" value="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pc100 cell">
+                        <div class="pc50 left cell">
+                            <span class="right label">Require Documents</span><br/>
+                        </div>
+                        <div class="pc50 right cell">
+                            <div style="width: 550px">
+                                <input style="width: 4%" type="checkbox" name="chkComercialInvoice" value="ON"/> Commercial Invoice (Please show your FDA registration number and on B/L)<br/>
+                                <input style="width: 4%" type="checkbox" name="chkComercialInvoice" value="ON"  /> Weight and Quality Certificates <br/>
+                                <input style="width: 4%" type="checkbox" name="chkComercialInvoice" value="ON" /> Phyto Sanitary Certificate <br/>
+                                <input style="width: 4%" type="checkbox" name="chkComercialInvoice" value="ON" /> Fumigation Certificate Include Container Numbers and Serial Numbers <br/>
+                                <input style="width: 4%" type="checkbox" name="chkComercialInvoice" value="ON" /> ICO and GSP Form <br/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pc100 cell" style="margin-top: 70px">
+                        <div class="pc50 left cell">
+                            <span class="right label">Remark</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <textarea style="width: 575px; height: 50px">
+                                
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="pc100 cell" style='margin-top: 30px'>
+                        <div class="pc50 left cell">
+                            <span class="right label">Completed</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <input type="checkbox" name="chkComplete" value="ON" />
+                        </div>
+                    </div>
+                    <div class="pc100 cell" style='margin-top: 0px'>
+                        <div class="pc50 left cell">
+                            <span class="right label">By Order of</span>
+                        </div>
+                        <div class="pc50 right cell">
+                            <!-- By order of -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right" style="width: 835px; margin-right: 3px">
+                <input class="left" type="submit" value="Save" />
+                <input class="right" type="submit" value="List View" />
+                <input class="right" type="submit" value="Print" />
+                <input class="right" type="submit" value="SM Advice" />
+                <input class="right" type="submit" value="Pkg List." />
+
+            </div>
+        </div>
+    </body>
+</html>

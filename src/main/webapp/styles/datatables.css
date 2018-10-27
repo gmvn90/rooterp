@@ -1,0 +1,18 @@
+div.dataTables_wrapper {padding-top: 20px}
+.dataTable {border-collapse: collapse; margin-top: 20px;}
+.dataTable tr th {border-collapse: collapse; border: 1px solid black;}
+.dataTable tr th {font-size: 13px;}
+.dataTable tr td {padding: 5px;}
+.dataTable tr td.formatNumber {text-align: right}
+.dataTable tr.data_row td {font-size: 11px; border-collapse: collapse; border: 1px solid black;}
+.dataTable thead {background: #EEEEEE}
+.dataTable tbody tr.data_row:hover,.chosen_row{cursor: pointer; background: #e5eff8}
+.empty_col {border: none !important; background: white; color: white}
+.dataTable tr.footer {font-weight: bold}
+a.paginate_button, div.dataTables_info {font-size: 13px; line-height: 20px}
+div.dataTables_length{width: 50%; float: left}
+div.dataTables_filter{width: 30%; float: right}
+div.dataTables_filter label {float: right;}
+a.paginate_button{color: #599FCF;}
+a.paginate_active, a.paginate_button_disabled{color: black; font-size: 13px !important}
+tr.footer td {border-collapse: collapse; border: 1px solid black; background: #EEE; font-size: 13px}

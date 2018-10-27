@@ -1,0 +1,9 @@
+div#main_content{width: 3200px !important}
+table{font-size: 10px;border-collapse: collapse;}
+table th, table td {border-collapse: collapse; border: 1px solid black;}
+div.tableBody{max-height: 600px; overflow-y:auto; overflow-x: auto}
+div.tableFooter {margin-top: 20px;font-size: 12px}
+div.tableHeader {margin-bottom: 20px}
+div.tableHeader table tr td, div.tableFooter table tr td{background: #EEE !important; font-weight: bold}
+tr.grade_row td {background: grey; color: white; font-weight: bold; padding-left: 10px}
+tr.total_row td {font-weight: bold}

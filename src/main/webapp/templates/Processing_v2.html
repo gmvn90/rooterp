@@ -1,0 +1,157 @@
+<!-- BEGIN: main -->
+<div class="pc80 left cell">
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Request Status</span>
+        </div>
+        <div class="pc60 left cell">
+            <select name="requestStatus" id="requestStatus" style="width: 30%">
+                <option value="0">Pending</option>
+                <option value="1">Completed</option>
+            </select>
+            <label id="authorizeRequestStatus">{userByUpdateRequestUserId}:{requestStatusDate}</label>
+            <input style="min-width: 10px" class="" type="button" id="saveRequestStatus" value="Save"/>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Completion Status</span>
+        </div>
+        <div class="pc60 left cell">
+            <select name="status" id="status" style="width: 30%">
+                <option value="0">Pending</option>
+                <option value="1">Completed</option>
+            </select>
+            <label id="authorizeCompletionStatus">{userByUpdateCompletionUserId}:{completionStatusDate}</label>
+            <input style="min-width: 10px" class="" type="button" id="saveStatus" value="Save"/>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Request Remarks</span>
+        </div>
+        <div class="pc50 left" style="border-bottom: solid 0.5px; margin-bottom: 25px;">
+            <textarea name="requestRemark" id="requestRemark" style="width: 530px; height: 50px; margin-bottom: 25px">{requestRemark}</textarea>
+        </div>
+    </div>
+
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Processing Ref</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 100%" id="refNumber" name="refNumber" value="{refNumber}" readonly=""/>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Date</span>
+        </div>
+        <div class="pc50 left cell">
+            <span {date_class}>{createdDate}</span>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Client</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="client" id="client" style="width: 100%">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Client Ref</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 100%" name="clientRef" id="clientRef" value="{clientRef}" value="" />
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Type</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="processingType" id="processingType" style="width: 100%">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Grade</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="grade" id="grade" style="width: 100%">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Quantity</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 50%" name="quantities" value="{quantities}" /> Mts
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Packing</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="packing" id="packing" style="width: 100%">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Requested Credit Date</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 100%" class="date_picker_text" name="requestedCreditDate" id="requestedCreditDate" value="{requestedCreditDate}" />
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Remark</span>
+        </div>
+        <div class="pc50 left cell">
+            <textarea name="remark" style="width: 530px; height: 50px">{remark}</textarea>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $(".date_picker_text").datepicker({
+            dateFormat: "d-M-y",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "1945:2050"
+        });
+        $("#requestStatus").val('{requestStatus}');
+        $("#status").val('{status}');
+        getSelection("processing_form", "grade", "selection_grade", '{grade}');
+        getSelection("processing_form", "client", "selection_company", '{client}');
+        getSelection("processing_form", "packing", "selection_packing", '{packing}');
+        getSelection("processing_form", "processingType", "selection_processing", '{processingType}');
+        getCurrentDateTimeText(".current_date_time");
+    });
+</script>
+<!-- END:main -->

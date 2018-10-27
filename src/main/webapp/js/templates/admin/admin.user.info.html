@@ -1,0 +1,89 @@
+<div class="percentage_100" style="min-height: 228px">
+    <div id="user_info" class="percentage_75" style="float: left;">
+        <ul style="width: 100%; margin-left: 5px;" class="text_display">
+            <li class="line">
+                <span class="left_element" style="width: 28%">Username</span>
+                <input class="mid_element" type="text" id="userName" name="userName" value="{{:username}}" minlength="2" />
+            </li>
+            <li class="line">
+                <span class="left_element" style="width: 28%">Full Name</span>
+                <input class="mid_element" type="text" id="fullName" name="fullName" value="{{:full_name}}" />
+            </li>
+            <li class="line">
+                <span class="left_element" style="width: 28%">Birth Date</span>
+                <input class="mid_element date_picker_text" type="text" id="dob" name="dob" value="{{:birth_date}}" readonly/>
+            </li>
+            <li class="line">
+                <span class="left_element" style="width: 28%">Mobile Number</span>
+                <input class="mid_element" type="text" id="phone" name="phone" value="{{:mobile}}" />
+            </li>
+            <li class="line">
+                <span class="left_element" style="width: 28%">Email</span>
+                <input class="mid_element" type="email" id="email" name="email" value="{{:email}}" />
+            </li>
+            <li class="line change_pwd_line" style="height: 30px">
+                <span class="left_element" style="margin-top: 5px; width: 28%">Password</span>
+                <input class="mid_element" type="button" style="height: 30px" id="btn_change_password" name="btn_change_password" value="Change Password" />
+            </li>
+            <li class="line password" style="display: none !important">
+                <span class="left_element" style="width: 28%">Password</span>
+                <input class="mid_element" type="password" id="usr_password" name="password" value="" autocomplete="off"/>
+            </li>
+            <li class="line password" style="display: none !important">
+                <span class="left_element" style="width: 28%">Confirm Password</span>
+                <input class="mid_element" type="password" id="confirm_password" name="confirm_password" value="" />
+            </li>
+        </ul>
+    </div>
+    <div class="percentage_25 image_div" style="float: right; margin-top: 12px">
+        <img class="border_1_solid_black" src="images/maleLogo.jpg" width="118px" height="118px" style="margin-bottom: 2px"  id="img_picture"/>
+        <input class="right_element" type="button" style="height: 30px; margin-top: 2px; margin-bottom: 2px" id="btn_change_picture" name="btn_change_picture" value="Change Picture" disabled=""/>
+    </div>
+</div>
+<div class="percentage_100">
+    <table id="tbl_user_permission" class="table_border_full_body" style="height: 140px; margin: 2px auto 2px auto">
+        <tbody>
+            <!--header-->
+            <tr style="border-bottom: 1px solid grey;">
+                <td>
+                    <table style="width: 100%">
+                        <tr>
+                            <th class="alignCenter indent_lvl_1 permission_col_1">Pages</th>
+                            <th colspan="4" class="alignCenter indent_lvl_1 permission_col_2">Access Rights</th>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!--body-->
+            <tr>
+                <td>
+                    <div style="width: 100%; height: 200px; overflow-y: auto">
+                        <table style="width: 100%">
+                            <tbody  id="tbody_authorization">
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="percentage_100">
+    <div class="percentage_30 left">
+        <ul style="width: 100%; margin-left: 5px;" class="text_display">
+            <li class="line">
+                <span class="left_element">Active</span>
+                <input class="right_element" type="checkbox" id="active" name="active" value="true" />
+            </li>
+        </ul>
+    </div>
+    <div class="percentage_50 right">
+        <select id="check" style="margin-top: 13px;">
+            <option value="-1">-</option>
+            <option value="0">None</option>
+            <option value="1">All</option>
+        </select>
+        <input type="button" style="margin-right: 10px; margin-top: 13px; float: right;" id="show_dialog" value="Show Full Screen" disabled=""/> 
+    </div>
+</div>

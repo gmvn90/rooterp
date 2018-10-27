@@ -1,0 +1,41 @@
+<div style="width: 770px; margin-top: 20px; position: relative">
+    <div style="width: 260px;padding-bottom: 10px;" class="left border">
+        <div class="title">
+            Available Companies
+        </div>
+        <div class="pc100">
+            <input type="text" style="width: 240px; margin-left: 5px" name="filter_ref" class="text_filter_child" id="available_filter">
+            <ul style="margin-top: 15px; margin-left: 5px; padding-left: 10px; width: 222px !important" id="company_list" class="filter ref_list">
+
+            </ul>
+        </div>
+    </div>
+    <div style="height: 500px; width: 50px; position: relative" class="left">
+        <a href="javascript:void(0);" class="mpcth-icon-right button" id="moveToRight"></a>
+        <a href="javascript:void(0);" class="mpcth-icon-left button" id="moveToLeft"></a>
+    </div>
+    <div id="selected_company_section"  style="width: 260px;padding-bottom: 10px; margin-left: 15px" class="left border">
+        <div class="title">
+            Selected Companies
+        </div>
+        <div class="pc100">
+            <input type="text" style="width: 240px; margin-left: 5px" name="filter_ref" class="text_filter_child" id="selected_filter">
+            <ul style="margin-top: 15px; margin-left: 5px; padding-left: 10px; width: 222px !important" id="selected_companies" class="filter ref_list">
+
+            </ul>
+        </div>
+    </div>
+    <ul id="companytype_section" class="left" style="margin-left: 15px">
+    </ul>
+    <input class="left" style="position: absolute; right: 50px; top: 160px" type="button" id="btn_save" value="Save"/>
+    <input class="left" style="position: absolute; right: 50px; top: 200px" type="button" id="btn_close" value="Close"/>
+</div>
+<script>
+    $(document).ready(function() {
+        generateSelection("#company_list", "CompanyMaster", "avail_comp_-1", {
+            action: "get_allcompany_filter", type: "list", prefix: "avail_comp_"
+        });
+    }).on("click", "#btn_close", function() {
+        $.closeDialog("#message_box");
+    });
+</script>

@@ -1,0 +1,144 @@
+<!-- BEGIN:user -->
+<div class="user" id="{id}" style="border-bottom: 1px solid grey; height: 35px; cursor: pointer" onclick="loadUserInfo('{id}')">
+    <div class="percentage_30" style="float: left">
+        <img class="left" src="{img}" width="35px" height="35px" style="border-right: 1px solid grey;" />
+    </div>
+    <div class="percentage_70" style="float: left; display: inline;">
+        <span>{userName}</span><br/>
+        <span>{fullName}</span>
+    </div>
+</div>
+<!-- END:user -->
+
+<!-- BEGIN:permission_container -->
+<!-- BEGIN:access_right -->
+<tr class="permission {page_section} {link}" id="page_{page_id}">
+    <td class="permission_col_1 {indent} {bold}">{page}</td>
+    <!-- BEGIN:permission -->
+    <td class="permission_col_2 alignLeft radio_permission {bold}" id="radio_permission_{page_id}">
+        <input type="radio" name="permission_{page_id}" id="radio_{page_id}_{p_value}" value="{p_value}" {checked}/><label for="radio_{page_id}_{p_value}">{p_text}</label>
+    </td>
+    <!-- END:permission -->
+</tr>
+<!-- END:access_right -->
+<script type="text/javascript">
+    $('.permission[class*=page] input:radio').change(function() {
+        var $array = $($(this).attr("id").split("_"));
+        var id = $(this).attr('id');
+        //console.log("id: " + id);
+        var pageId = $array.get(1);
+        //console.log("page: " + pageId);
+        var $siblingRadios = $(this).parent().parent().children().children('input:radio');
+        var first = $siblingRadios.first().attr('id');
+        var last = $siblingRadios.last().attr('id');
+        //console.log("first: " + first);
+        //console.log("last: " + last);
+        if (id == first) {
+            checkChildren(pageId, 'first');
+        } else if (id == last) {
+            checkChildren(pageId, 'last');
+        }
+
+    });
+
+    $('.permission[class*=section] input:radio').change(function() {
+        var $array = $($(this).attr("id").split("_"));
+        var id = $(this).attr('id');
+        var pageId = $array.get(1).split('.')[0];
+        var $siblingRadios = $(this).parent().parent().children().children('input:radio');
+        var first = $siblingRadios.first().attr('id');
+        var last = $siblingRadios.last().attr('id');
+        var isCheckAll = false;
+        if (id == first) {
+            //check each section in page
+            $(this).parent().parent().siblings('[id^=' + pageId + '\\.]').each(function() {
+//                console.log('ID: ' + $(this).attr('id') + ' - checked: ' + $(this).find('input:radio').first().prop('checked'));
+                if (!$(this).find('input:radio').first().prop('checked')) { //if first radio is not select, return
+                    isCheckAll = false;
+                    return false;
+                } else {
+                    isCheckAll = true;
+                }
+            })
+            if (isCheckAll) { //if all first radios is checked, check page as No
+                $('.permission[class*=page][id=' + pageId + ']').find('input:radio').first().prop('checked', true);
+            }
+        } else if (id == last) {
+            //check each section in page
+            $(this).parent().parent().siblings('[id^=' + pageId + '\\.]').each(function() {
+                if (!$(this).find('input:radio').last().prop('checked')) { //if first radio is not select, return
+                    isCheckAll = true;
+                    return false;
+                } else {
+                    isCheckAll = false;
+                }
+            })
+            if (isCheckAll) { //if all first radios is checked, check page as Yes
+                $('.permission[class*=page][id=' + pageId + ']').find('input:radio').last().prop('checked', true);
+            }
+        }
+    });
+
+    function checkChildren(pageId, position) {
+        $('.permission[class*=section][id^=' + pageId + '\\.]').each(function() {
+            //console.log("this: " + $(this).attr('id'));
+            if (position == 'first') {
+                $(this).find('input:radio').first().prop('checked', true);
+            } else if (position == 'last') {
+                $(this).find('input:radio').last().prop('checked', true);
+            }
+        });
+    }
+    ;
+</script>
+<!-- END:permission_container -->
+
+<!-- BEGIN:permission_dialog -->
+<style>
+    /*table#tbl_user_permission input{ width: 100%;}*/
+    #detailBox{font-size: 130%; top: 130px; padding-top: 0px;}
+
+</style>
+<h3>Permission Setting</h3>
+<table id="tbl_user_permission" class="table_border_full_body" style="height: 400px; width: 95%;margin: 2px 5px 2px 5px">
+    <tbody>
+        <!--header-->
+        <tr style="border-bottom: 1px solid grey;">
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <th class="alignCenter indent_lvl_1 permission_col_1">Pages</th>
+                        <th class="alignCenter indent_lvl_1 permission_col_2">Access Rights</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!--body-->
+        <tr>
+            <td>
+                <div style="width: 100%; height: 450px; overflow-y: auto">
+                    <table style="width: 100%">
+                        <tbody  id="tbody_authorization">
+                            {body}
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div style="width: 100%; margin: 20px auto auto auto;">
+    <input type="button" value="Close" class='close_opacity' style='float: right; margin-right: 20px'/>
+    <input type="button" value="Save" class="btn_submit" id="new_mov" style='float: right; margin-right: 5px'/>
+</div>
+
+<script type="text/javascript">
+//    $(document).ready(function() {
+//        $('#new_mov').click(function() {
+//            $('#action').val('save');
+//            $('#movement_form').submit();
+//        });
+//    })
+</script>
+<!-- END:permission_dialog -->

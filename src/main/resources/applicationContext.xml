@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+    
+    
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="classpath:WEB-INF/database.properties" />
+    <bean id="configConfigurer" class="org.springframework.beans.factory.config.PropertiesFactoryBean" 
+          p:location="classpath:WEB-INF/config.properties" />
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}" />
+
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.swcommodities.wsmill.hibernate.dto, com.swcommodities.wsmill.hibernate.clientDto"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="generateDdl" value="true" />
+                <property name="showSql" value="false"/>
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
+                <property name="database" value="MYSQL"/>
+            </bean>
+        </property>
+        <property name="jpaProperties">
+        <props>
+            <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+            <prop key="hibernate.show_sql">false</prop>
+        </props>
+    </property>
+
+    </bean>
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+            <property name="maxUploadSize" value="5000000" />
+    </bean>
+
+    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+    
+    <bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+                <prop key="javax.persistence.validation.mode">none</prop>
+            </props>
+        </property>
+        <property name="packagesToScan" value="com.swcommodities.wsmill.hibernate.dto, com.swcommodities.wsmill.hibernate.clientDto"/>
+        
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+    <bean id="userDao" class="com.swcommodities.wsmill.hibernate.dao.UserDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="menuDao" class="com.swcommodities.wsmill.hibernate.dao.MenuDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>  
+    <bean id="pageDao" class="com.swcommodities.wsmill.hibernate.dao.PageDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="authorizationDao" class="com.swcommodities.wsmill.hibernate.dao.AuthorizationDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>    
+    <bean id="gradeDao" class="com.swcommodities.wsmill.hibernate.dao.GradeDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>   
+    <bean id="companyDao" class="com.swcommodities.wsmill.hibernate.dao.CompanyDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean> 
+    <bean id="packingDao" class="com.swcommodities.wsmill.hibernate.dao.PackingDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean> 
+    <bean id="processingDao" class="com.swcommodities.wsmill.hibernate.dao.ProcessingDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="deliveryInsDao" class="com.swcommodities.wsmill.hibernate.dao.DeliveryInsDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean> 
+    <bean id="warehouseDao" class="com.swcommodities.wsmill.hibernate.dao.WarehouseDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="cellTypeDao" class="com.swcommodities.wsmill.hibernate.dao.CellTypeDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="warehouseCellDao" class="com.swcommodities.wsmill.hibernate.dao.WarehouseCellDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="warehouseMapDao" class="com.swcommodities.wsmill.hibernate.dao.WarehouseMapDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean> 
+    <bean id="weightNoteDao" class="com.swcommodities.wsmill.hibernate.dao.WeightNoteDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="qualityReportDao" class="com.swcommodities.wsmill.hibernate.dao.QualityReportDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="palletMasterDao" class="com.swcommodities.wsmill.hibernate.dao.PalletMasterDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="weightNoteReceiptDao" class="com.swcommodities.wsmill.hibernate.dao.WeightNoteReceiptDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="allocationDao" class="com.swcommodities.wsmill.hibernate.dao.AllocationDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="cupTestDao" class="com.swcommodities.wsmill.hibernate.dao.CupTestDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="shippingLineDao" class="com.swcommodities.wsmill.hibernate.dao.ShippingLineDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="shippingDao" class="com.swcommodities.wsmill.hibernate.dao.ShippingDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="portMasterDao" class="com.swcommodities.wsmill.hibernate.dao.PortMasterDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="notifyPartyDao" class="com.swcommodities.wsmill.hibernate.dao.NotifyPartyDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="documentMasterDao" class="com.swcommodities.wsmill.hibernate.dao.DocumentMasterDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="documentsDao" class="com.swcommodities.wsmill.hibernate.dao.DocumentsDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="accessoryMasterDao" class="com.swcommodities.wsmill.hibernate.dao.AccessoryMasterDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="accessoriesDao" class="com.swcommodities.wsmill.hibernate.dao.AccessoriesDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="warehouseReceiptDao" class="com.swcommodities.wsmill.hibernate.dao.WarehouseReceiptDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="cityDao" class="com.swcommodities.wsmill.hibernate.dao.CityDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="commonDao" class="com.swcommodities.wsmill.hibernate.dao.CommonDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="weightLossDao" class="com.swcommodities.wsmill.hibernate.dao.WeightLossDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="stockHistoricalDao" class="com.swcommodities.wsmill.hibernate.dao.StockHistoricalDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="movementDao" class="com.swcommodities.wsmill.hibernate.dao.MovementDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="priceListDao" class="com.swcommodities.wsmill.hibernate.dao.PriceListDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="gradeFormulaDao" class="com.swcommodities.wsmill.hibernate.dao.GradeFormulaDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="shippingAdviceDao" class="com.swcommodities.wsmill.hibernate.dao.ShippingAdviceDao">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    
+</beans>

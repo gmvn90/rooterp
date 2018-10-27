@@ -1,0 +1,408 @@
+<!-- BEGIN: main -->
+<div  class="pc100" style="height: 520px">
+    <div class="pc50 left cell">
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Client</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="client" id="client" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Client Ref</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" name="client_ref" id="client_ref" value="{client_ref}" style="width: 97%" />
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Delivery Ins. Ref</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" style="width: 97%" id="ref_number" name="ref_number" value="{ref_number}" readonly=""/>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">DI Date</span>
+            </div>
+            <div class="pc50 right cell">
+                <span {date_class}>{created_date}</span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Supplier</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="supplier" id="supplier" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Supplier Ref</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" name="supplier_ref" id="supplier_ref" value="{supplier_ref}" style="width: 97%" />
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Packing</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="packing" id="packing" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Quantity</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" name="quantity" id="quantity" value="{tons}" style="width: 50%"  /> Mts
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Kg per Bag</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" name="kg_per_bag" id="kg_per_bag" value="{kg_per_bag}" style="width: 50%"  />
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">No of Bags</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" name="no_of_bag" id="no_of_bag" value="{no_of_bag}" style="width: 50%" />
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Warehouse Delivery</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="warehouse" id="warehouse" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Delivery Date</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" class="date_picker_text" name="delivery_date" id="delivery_date" value="{delivery_date}" style="width: 60%" />
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+            <div class="pc50 right cell">
+                <span >From Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Time</span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Delivery Period</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" class="timePicker" name="from_time" id="from_time" value="{from_time}" style="width: 30%" readonly=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="timePicker" name="to_time" id="to_time" value="{to_time}" style="width: 30%" readonly=""/>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">No Marking On Bags</span>
+            </div>
+            <div class="pc50 right cell">
+                <input type="text" name="no_marking_on_bags" id="no_marking_on_bags" value="{marking_on_bags}" style="width: 97%" />
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Weight Controller</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="weight_controller" id="weight_controller" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Quality Controller</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="quality_controller" id="quality_controller" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Pledge</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="pledge" id="pledge" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="pc50 right cell">
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Origin</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="origin" id="origin" style="width: 100%">
+                    <option value="1">VietNam</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Quality</span>
+            </div>
+            <div class="pc50 right cell">
+                <select name="quality" id="quality" style="width: 100%">
+                    <option value="1">Robusta</option>
+                    <option value="2">Arabica</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Grade</span>
+            </div>
+            <div class="pc50 right cell">
+                <select id="grade" name="grade" style="width: 100%">
+                    <option value="-1"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Delivered</span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">
+                    <label id="delivered">{delivered}</label>&nbsp;Mts
+                </span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Pending</span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">
+                    <label id="pending">{pending}</label>&nbsp;Mts
+                </span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">Canceled</span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label">
+                    <label id="canceled">{canceled}</label>&nbsp;Mts
+                </span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="left label">Documents For Payment</span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <input type="checkbox" name="original_wr" id="original_wr" value="ON"/> Original Warehouse Reciept
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <input type="checkbox" name="comercial_invoice" id="comercial_invoice" value="ON" /> Comerical Invoice
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <input type="checkbox" name="cert_oqq" id="cert_oqq" value="ON" /> Cert. Of Quantity & Quality
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <span class="right label"></span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc50 left cell">
+                <input type="checkbox" name="letter_og" id="letter_og" value="ON" /> Letter of Guarantee
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="clear"></div>
+<div class="pc50 left" style="height: 120px; margin-top: 20px">
+    <div class="pc100 cell">
+        <div class="pc50 left cell">
+            <span class="right label">Remark</span>
+        </div>
+        <div class="pc50 right cell">
+            <textarea name="remark" id="remark" style="width: 575px; height: 50px">{remark}</textarea>
+        </div>
+    </div>
+    <div class="pc100 cell" style='margin-top: 30px'>
+        <div class="pc50 left cell">
+            <span class="right label">Completed</span>
+        </div>
+        <div class="pc50 right cell">
+            <input type="checkbox" name="completed"  id="di_status"  value="{status_value}" {checked}/>
+        </div>
+    </div>
+    <div class="pc100 cell" style='margin-top: 10px'>
+        <div class="pc50 left cell">
+            <span class="right label">Updated by</span>
+        </div>
+        <div class="pc50 right cell">
+            <span name="updated_by" id="updated_by">{username}</span>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        getSelection("deliveryIns_form", "grade", "selection_grade", '{grade_id}');
+        getSelection("deliveryIns_form", "client", "selection_company", '{client_id}');
+        getSelection("deliveryIns_form", "packing", "selection_packing", '{packing_id}');
+        getSelection("deliveryIns_form", "weight_controller", "selection_company", '{weight_con_id}');
+        getSelection("deliveryIns_form", "quality_controller", "selection_company", '{quality_con_id}');
+        getSelection("deliveryIns_form", "supplier", "selection_company", '{supplier_id}');
+        getSelection("deliveryIns_form", "warehouse", "selection_warehouse", '{warehouse_id}');
+        var quality_id = '{quality}';
+        $("#quality").val(parseInt(quality_id));
+        getCurrentDateTimeText(".current_date_time");
+    });
+
+</script>
+<!-- END:main -->

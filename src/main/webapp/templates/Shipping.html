@@ -1,0 +1,365 @@
+<!-- BEGIN: main -->
+<div style="width: 1060px !important; min-height: 80px; height: auto; overflow: hidden;" class="center border">
+    <div class="left" style="width: 530px;">
+        <table class="detail_info_table" style="margin-left: 60px">
+            <tr>
+                <td class="" align="right">Client</td>
+                <td class="fontBolder" align="left">
+                    <select name="client" id="client" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class=""  align="right">Client Ref</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" style="width: 97%" name="client_ref" id="client_ref" value="{client_ref}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">SI Ref</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" style="width: 97%" id="ref_number" name="ref_number" value="{ref_number}" readonly=""/>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Created Date</td>
+                <td class="fontBolder" align="left">
+                    <span {date_class}>{created_date}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Supplier</td>
+                <td class="fontBolder" align="left">
+                    <select name="supplier" id="supplier" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Buyer</td>
+                <td class="fontBolder" align="left">
+                    <select name="buyer" id="buyer" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <td class=""  align="right">Buyer Ref</td>
+            <td class="fontBolder" align="left">
+                <input type="text" style="width: 97%" name="buyer_ref" id="buyer_ref" value="{buyer_ref}" />
+            </td>
+            <tr>
+                <td class="" align="right">Origin</td>
+                <td class="fontBolder" align="left">
+                    <select name="origin" id="origin" style="width: 100%">
+                        <option value="1">VietNam</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Quality</td>
+                <td class="fontBolder" align="left">
+                    <select name="quality" id="quality" style="width: 100%">
+                        <option value="1">Robusta</option>
+                        <option value="2">Arabica</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Grade</td>
+                <td class="fontBolder" align="left">
+                    <select id="grade" name="grade" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Contract Quantity</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" class="numberOnly" style="width: 50%" name="contract_quantity" id="contract_quantity" value="{contract_quantity}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Shipment</td>
+                <td class="fontBolder" align="left">
+                    <select id="shipment" name="shipment" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Quantity</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" class="numberOnly" style="width: 50%" name="quantities" id="quantities" value="{quantities}" /> Mts
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Loading Date</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" class="date_picker_text" name="loading_date" id="loading_date" value="{loading_date}" style="width: 50%" />
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right"></td>
+                <td class="fontBolder" align="left">
+                    <label>From</label><label style="margin-left: 105px">To</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Shipping Period</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" class="date_picker_text" name="from_date" id="from_date" value="{from_date}" style="width: 25%" />
+                    <input type="text" class="date_picker_text" name="to_date" id="to_date" value="{to_date}" style="width: 25%; margin-left: 50px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Service Contract No</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" style="width: 97%" name="service_contract_no" id="service_contract_no" value="{service_contract_no}" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right" style="width: 530px;">
+        <table class="detail_info_table" style="margin-left: 60px">
+            <tr>
+                <td class="" align="right">Shipper</td>
+                <td class="fontBolder" align="left">
+                    <select id="shipper" name="shipper" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class=""  align="right">Consignee</td>
+                <td class="fontBolder" align="left">
+                    <select id="consignee" name="consignee" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Notify Party</td>
+                <td class="fontBolder" align="left">
+                    <table id="notify_table">
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="" align="right">Shipping line</td>
+                <td class="fontBolder" align="left">
+                    <select id="shipping_line" name="shipping_line" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Feeder Vessel</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" name="feeder_vessel" id="feeder_vessel" value="{feeder_vessel}" style="width: 100%"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">ETS</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" class="date_picker_text" style="width: 25%; margin-right: 50px" name="feeder_ets" id="feeder_ets" value="{feeder_ets}"/>
+                    ETA<input type="text" class="date_picker_text" style="width: 25%; margin-left: 20px" name="feeder_eta" id="feeder_eta" value="{feeder_eta}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Ocean Vessel</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" name="ocean_vessel" id="ocean_vessel" value="{ocean_vessel}" style="width: 100%"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">ETS</td>
+                <td class="fontBolder" align="left">
+                    <input type="text" class="date_picker_text" style="width: 25%; margin-right: 50px" name="ocean_ets" id="ocean_ets" value="{ocean_ets}"/>
+                    ETA<input type="text" class="date_picker_text" style="width: 25%; margin-left: 20px" name="ocean_eta" id="ocean_eta" value="{ocean_eta}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Port of Loading</td>
+                <td class="fontBolder" align="left">
+                    <select id="loading_port" name="loading_port" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Place of Delivery</td>
+                <td class="fontBolder" align="left">
+                    <select id="place" name="place" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Port of Discharge</td>
+                <td class="fontBolder" align="left">
+                    <select id="discharge_port" name="discharge_port" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Container Status</td>
+                <td class="fontBolder" align="left">
+                    <select id="container_status" name="container_status" style="width: 100%">
+                        <option value="1">FCL/FCL</option>
+                        <option value="2">LCL/FCL</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Weight Cert. By</td>
+                <td class="fontBolder" align="left">
+                    <select id="weight_cert" name="weight_cert" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="" align="right">Quality Cert. By</td>
+                <td class="fontBolder" align="left">
+                    <select id="quality_cert" name="quality_cert" style="width: 100%">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="width: 1060px !important; min-height: 80px; height: auto; overflow: hidden;" class="center border">
+    <table class="detail_info_table" style="margin-left: 60px">
+        <tr>
+            <td class="" align="right">
+                Marking on Bags
+            </td>
+            <td align="left">
+                <textarea name="marking" id="marking" style="width: 575px; height: 50px">{marking}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">Freight</td>
+            <td align="left">
+                <input style="width: 575px" type="text" name="freight" id="freight" value="{freight}" />
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">Accessories</td>
+            <td align="left">
+                <table class="cuteBorder" style="width: 575px; height: 100px; border: 1px solid black;">
+                    <thead>
+                        <tr>
+                            <th>Items</th>
+                            <th>Unit</th>
+                            <th>Quantity</th>
+                            <th>Supplier</th>
+                        </tr>
+                    </thead>
+                    <tbody id="accessory_items">
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">LC No</td>
+            <td align="left">
+                <input style="width: 100px" type="text" name="lc_no" id="lc_no" value="{lc_no}" />
+                <label style="margin-left: 100px">LC date</label> <input type="text" class="date_picker_text" name="lc_date" id="lc_date" value="{lc_date}" style="width: 100px; margin-left: 10px" />
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">Invoice No</td>
+            <td align="left">
+                <input style="width: 100px" type="text" name="invoice_no" id="invoice_no" value="{invoice_no}" />
+                <label style="margin-left: 72px">Invoice date</label> <input type="text" class="date_picker_text" name="invoice_date" id="invoice_date" value="{invoice_date}" style="width: 100px; margin-left: 10px" />
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">B/L Number</td>
+            <td align="left">
+                <input style="width: 100px" type="text" name="bl_number" id="bl_number" value="{bl_number}" />
+                <label style="margin-left: 95px">B/L date</label> <input type="text" class="date_picker_text" name="bl_date" id="bl_date" value="{bl_date}" style="width: 100px; margin-left: 10px" />
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">Require Documents</td>
+            <td id="document_master_items" align="left">
+
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">Remark</td>
+            <td align="left">
+                <textarea name="remark" id="remark" style="width: 575px; height: 50px">{remark}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">Complete</td>
+            <td align="left">
+                <input type="checkbox" name="completed" id="si_status" value="{status_value}" {checked} style="width: 4%"/>
+            </td>
+        </tr>
+        <tr>
+            <td class=""  align="right">By Order of</td>
+            <td align="left">
+                {username}
+            </td>
+        </tr>
+    </table>
+</div>
+<input type="hidden" id="notifyJson" name="notifyJson" value="{notifyJson}"/>
+<script>
+                    $(document).ready(function() {
+                        var stt = '{stt}';
+                        var notify_flag = '{notifyJson}';
+                        getSelection("shipping_form", "client", "selection_company", '{client_id}');
+                        getSelection("shipping_form", "supplier", "selection_company", '{supplier_id}');
+                        getSelection("shipping_form", "buyer", "selection_company", '{buyer_id}');
+                        getSelection("shipping_form", "grade", "selection_grade", '{grade_id}');
+                        getSelection("shipping_form", "shipment", "selection_packing", '{shipment_id}');
+                        getSelection("shipping_form", "shipper", "selection_company", '{shipper_id}');
+                        getSelection("shipping_form", "consignee", "selection_company", '{consignee_id}');
+                        getSelection("shipping_form", "notify", "selection_company", '{notify_id}');
+                        getSelection("shipping_form", "shipping_line", "selection_shipping_line", '{shipping_line_id}');
+                        getSelection("shipping_form", "loading_port", "selection_port", '{loading_port_id}');
+                        getSelection("shipping_form", "place", "selection_city", '{place_id}');
+                        getSelection("shipping_form", "discharge_port", "selection_port", '{discharge_port_id}');
+                        getSelection("shipping_form", "weight_cert", "selection_company", '{weight_cert_id}');
+                        getSelection("shipping_form", "quality_cert", "selection_company", '{quality_cert_id}');
+
+                        getCurrentDateTimeText(".current_date_time");
+                        $("#container_status").val('{container_status}');
+
+                        if (stt === "new") {
+                            notify_json = [{"id": "0", "compid": "-1", "status": "1"}];
+                            accessories_json = [
+                                {"id": "0", "accid": "1", "quantity": "0", "suppid": "-1"},
+                                {"id": "-1", "accid": "2", "quantity": "0", "suppid": "-1"},
+                                {"id": "-2", "accid": "3", "quantity": "0", "suppid": "-1"}
+                            ];
+                            documents_json = [
+                                {"id": "0", "docid": "5", "status": "0"},
+                                {"id": "-1", "docid": "6", "status": "0"},
+                                {"id": "-2", "docid": "7", "status": "0"},
+                                {"id": "-3", "docid": "8", "status": "0"},
+                                {"id": "-4", "docid": "9", "status": "0"}
+                            ];
+                        } else {
+                            notify_json = jQuery.parseJSON('{notifyJson}');
+                            accessories_json = jQuery.parseJSON('{accessoryJson}');
+                            documents_json = jQuery.parseJSON('{documentJson}');
+                        }
+                        drawNotifyTable(notify_json);
+                        sendJsonRequest("accessory_items", "get_accessory_master", "", 0, [{"name": "applyAccessories", "params": [accessories_json]}]);
+                        sendJsonRequest("document_master_items", "get_document_master", "", 0, [{"name": "applyDocuments", "params": [documents_json]}]);
+                    });
+
+</script>
+<!-- END: main -->

@@ -1,0 +1,16 @@
+<!-- BEGIN: main -->
+<tr id='am_{id}'>
+    <td class='textAlignRight'>{name}</td>
+    <td class='textAlignCenter'>{unit}</td>
+    <td class='textAlignCenter'><input name='am_quan_{id}' id='am_quan_{id}' class='accessory_quantity numberOnly' type='text' value='0.0' style='width: 40px'/></td>
+    <td><select name='am_sup_{id}' id='am_sup_{id}' class='accessory_select' style='width: 100%'>
+            <option value=''></option>
+        </select>
+    </td>
+</tr>
+<script>
+    $(document).ready(function() {
+        getSelection("shipping_form", "am_sup_{id}", "selection_company", -1);
+    });
+</script>
+<!-- END: main -->

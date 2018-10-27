@@ -1,0 +1,27 @@
+{{for pis}}
+<table class="sStorage">
+	<tbody>
+	<tr class="sTitle piRow" id="piRow_{{:id}}">
+            <td colspan="2">
+                <!--<input type="checkbox" id="checkAllGrade_{{:id}}" class="grade_check_box" style="margin-left: -17px;margin-right: 10px;"/>-->
+                <a class="expandCollapse mpcth-icon-plus" id="expandCollapse_{{:id}}"></a>
+                {{:refNumber}}
+            </td> 
+            <td colspan="2">{{:date}}</td>
+    </tr>
+	</tbody>
+</table>
+<table class="pi_detail sStorage hid" id="pidetail_{{:id}}">
+	<tr>
+		<td colspan="4">Loading...</td>
+	</tr>
+</table>
+{{/for}}
+<hr/>
+<table class="sStorage">
+    <tr class="sFoot">
+    	<td colspan="3">Total Invoice</td>
+    	<td id="total_invoice" class="formatNumber"></td>
+    </tr>
+</table>
+<input type="hidden" id="size" value='{{:size}}'/>

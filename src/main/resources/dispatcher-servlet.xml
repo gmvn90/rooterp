@@ -1,0 +1,193 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd 
+        http://www.springframework.org/schema/data/jpa 
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <context:component-scan base-package="com.swcommodities.wsmill.controller, com.swcommodities.wsmill.hibernate.dto.calculators, com.swcommodities.wsmill.formController, com.swcommodities.wsmill.clientController, com.swcommodities.wsmill.runners, com.swcommodities.wsmill.service, com.swcommodities.wsmill.application.scheduler, com.swcommodities.wsmill.application.service, com.swcommodities.wsmill.infrastructure, com.swcommodities.wsmill.domain.service, com.swcommodities.wsmill.domain.event.listener, com.swcommodities.wsmill.hibernate.dto.facade.assembler" />
+    <task:annotation-driven />
+    <util:properties id="applicationProps" location="classpath:WEB-INF/schedule.properties" />
+    <context:property-placeholder properties-ref="applicationProps" />
+    <mvc:annotation-driven ignoreDefaultModelOnRedirect="true" />
+    
+    <jpa:repositories
+            base-package="com.swcommodities.wsmill.repository, com.swcommodities.wsmill.clientRepository" />
+
+
+    
+    <!-- Configure the multipart resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:maxUploadSize="4194304"/>
+    
+    <mvc:interceptors>
+        <bean class="com.swcommodities.wsmill.interceptors.AuthorizationInterceptor">
+            <property name="pageService" ref="pageService"/>
+            <property name="authorizationService" ref="authorizationService"/>
+        </bean>
+    </mvc:interceptors>
+    
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/"
+          p:suffix=".jsp" />
+    <tx:annotation-driven/>
+    <bean id="commonService" class="com.swcommodities.wsmill.bo.CommonService">
+        <property name="commonDao" ref="commonDao"/>
+    </bean>
+    <bean id="authorizationService" class="com.swcommodities.wsmill.bo.AuthorizationService">
+        <property name="authorizationDao" ref="authorizationDao"/>
+    </bean>
+    <bean id="menuService" class="com.swcommodities.wsmill.bo.MenuService">
+        <property name="menuDao" ref="menuDao"/>
+        <property name="authorizationService" ref="authorizationService"/>
+    </bean>
+    <bean id="pageService" class="com.swcommodities.wsmill.bo.PageService">
+        <property name="pageDao" ref="pageDao"/>
+    </bean>
+    <bean id="userService" class="com.swcommodities.wsmill.bo.UserService">
+        <property name="userDao" ref="userDao"/>
+        <property name="pageService" ref="pageService"/>
+        <property name="authorizationService" ref="authorizationService"/>
+    </bean>
+    <bean id="gradeService" class="com.swcommodities.wsmill.bo.GradeService">
+        <property name="gradeDao" ref="gradeDao"/>
+    </bean>
+    <bean id="companyService" class="com.swcommodities.wsmill.bo.CompanyService">
+        <property name="companyDao" ref="companyDao"/>
+    </bean>
+    <bean id="packingService" class="com.swcommodities.wsmill.bo.PackingService">
+        <property name="packingDao" ref="packingDao"/>
+    </bean>
+    <bean id="processingService" class="com.swcommodities.wsmill.bo.ProcessingService">
+        <property name="processingDao" ref="processingDao"/>
+        <property name="deliveryInsDao" ref="deliveryInsDao"/>
+        <property name="weightNoteService" ref="weightNoteService"/>
+    </bean>
+    <bean id="deliveryInsService" class="com.swcommodities.wsmill.bo.DeliveryInsService">
+        <property name="deliveryInsDao" ref="deliveryInsDao"/>
+        <property name="weightNoteService" ref="weightNoteService"/>
+    </bean>
+    <bean id="warehouseService" class="com.swcommodities.wsmill.bo.WarehouseService">
+        <property name="warehouseDao" ref="warehouseDao"/>
+    </bean>   
+    <bean id="cellTypeService" class="com.swcommodities.wsmill.bo.CellTypeService">
+        <property name="cellTypeDao" ref="cellTypeDao"/>
+    </bean>
+    <bean id="warehouseCellService" class="com.swcommodities.wsmill.bo.WarehouseCellService">
+        <property name="warehouseCellDao" ref="warehouseCellDao"/>
+    </bean>
+    <bean id="qualityReportService" class="com.swcommodities.wsmill.bo.QualityReportService">
+        <property name="qualityReportDao" ref="qualityReportDao"/>
+    </bean>
+    <bean id="weightNoteService" class="com.swcommodities.wsmill.bo.WeightNoteService">
+        <property name="weightNoteDao" ref="weightNoteDao"/>
+        <property name="deliveryService" ref="deliveryInsService"/>
+        <property name="processingService" ref="processingService"/>
+        <property name="weightNoteReceiptService" ref="weightNoteReceiptService"/>
+        <property name="packingService" ref="packingService"/>
+        <property name="shippingService" ref="shippingService"/>
+        <property name="qualityReportService" ref="qualityReportService"/>
+        <property name="warehouseCellService" ref="warehouseCellService"/>
+        <property name="deliveryInstructionRepository" ref="deliveryInstructionRepository"/>
+    </bean>
+    <bean id="warehouseMapService" class="com.swcommodities.wsmill.bo.WarehouseMapService">
+        <property name="warehouseMapDao" ref="warehouseMapDao"/>
+    </bean>
+    <bean id="palletMasterService" class="com.swcommodities.wsmill.bo.PalletMasterService">
+        <property name="palletMasterDao" ref="palletMasterDao"/>
+    </bean>
+    <bean id="weightNoteReceiptService" class="com.swcommodities.wsmill.bo.WeightNoteReceiptService">
+        <property name="weightNoteReceiptDao" ref="weightNoteReceiptDao"/>
+        <property name="weightNoteService" ref="weightNoteService"/>
+        <property name="deliveryInstructionRepository" ref="deliveryInstructionRepository"/>
+    </bean>
+    <bean id="allocationService" class="com.swcommodities.wsmill.bo.AllocationService">
+        <property name="allocationDao" ref="allocationDao"/>
+        <property name="processingService" ref="processingService"/>
+        <property name="shippingService" ref="shippingService"/>
+    </bean>
+    <bean id="cupTestService" class="com.swcommodities.wsmill.bo.CupTestService">
+        <property name="cupTestDao" ref="cupTestDao"/>
+    </bean>
+    <bean id="shippingLineService" class="com.swcommodities.wsmill.bo.ShippingLineService">
+        <property name="shippingLineDao" ref="shippingLineDao"/>
+    </bean>
+    <bean id="shippingService" class="com.swcommodities.wsmill.bo.ShippingService">
+        <property name="shippingDao" ref="shippingDao"/>
+        <property name="deliveryInsDao" ref="deliveryInsDao"/>
+        <property name="weightNoteService" ref="weightNoteService"/>
+    </bean>
+    <bean id="portMasterService" class="com.swcommodities.wsmill.bo.PortMasterService">
+        <property name="portMasterDao" ref="portMasterDao"/>
+    </bean>
+    <bean id="documentMasterService" class="com.swcommodities.wsmill.bo.DocumentMasterService">
+        <property name="documentMasterDao" ref="documentMasterDao"/>
+    </bean>
+    <bean id="documentsService" class="com.swcommodities.wsmill.bo.DocumentsService">
+        <property name="documentsDao" ref="documentsDao"/>
+    </bean>
+    <bean id="warehouseReceiptService" class="com.swcommodities.wsmill.bo.WarehouseReceiptService">
+        <property name="warehouseReceiptDao" ref="warehouseReceiptDao"/>
+        <property name="companyDao" ref="companyDao"/>
+        <property name="qualityReportDao" ref="qualityReportDao"/>
+        <property name="weightNoteDao" ref="weightNoteDao"/>
+        <property name="commonService" ref="commonService"/>
+    </bean>
+    <bean id="cityService" class="com.swcommodities.wsmill.bo.CityService">
+        <property name="cityDao" ref="cityDao"/>
+    </bean>
+    <bean id="weightLossService" class="com.swcommodities.wsmill.bo.WeightLossService">
+        <property name="weightLossDao" ref="weightLossDao"/>
+    </bean>
+    <bean id="threads" class="com.swcommodities.wsmill.threadExecutor.Threads">
+        <property name="weightNoteService" ref="weightNoteService"/>
+        <property name="stockHistoricalService" ref="stockHistoricalService"/>
+    </bean>
+    <bean id="stockHistoricalService" class="com.swcommodities.wsmill.bo.StockHistoricalService">
+        <property name="stockHistoricalDao" ref="stockHistoricalDao"/>
+        <property name="processingDao" ref="processingDao"/>
+        <property name="commonDao" ref="commonDao"/>
+        <property name="gradeDao" ref="gradeDao"/>
+        <property name="authorizationDao" ref="authorizationDao"/>
+        <property name="companyService" ref="companyService"/>
+        <property name="gradeService" ref="gradeService"/>
+        <property name="warehouseMapService" ref="warehouseMapService"/>
+    </bean>
+    <bean id="movementService" class="com.swcommodities.wsmill.bo.MovementService">
+        <property name="movementDao" ref="movementDao"/>
+    </bean>
+    <bean id="priceListService" class="com.swcommodities.wsmill.bo.PriceListService">
+        <property name="priceListDao" ref="priceListDao"/>
+    </bean>
+    <bean id="gradeFormulaService" class="com.swcommodities.wsmill.bo.GradeFormulaService">
+        <property name="gradeFormulaDao" ref="gradeFormulaDao"/>
+    </bean>
+    <bean id="shippingAdviceService" class="com.swcommodities.wsmill.bo.ShippingAdviceService">
+        <property name="shippingAdviceDao" ref="shippingAdviceDao"/>
+    </bean>
+    <bean id="fileUrlService" class="com.swcommodities.wsmill.bo.FileUrlService">
+    </bean>
+    <bean id="costService" class="com.swcommodities.wsmill.bo.CostService">
+    </bean>
+    <bean id="invoiceChangeAspect" class="com.swcommodities.wsmill.aspect.InvoiceChangeAspect" />
+    <aop:aspectj-autoproxy />
+</beans>

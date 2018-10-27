@@ -1,0 +1,157 @@
+<div style="width: 1000px; height: auto; overflow: hidden">
+    <div class="left" style="width: 400px;">
+        <table class="table_detail_content">
+            <tr>
+                <td class="firstcol" align="right">Movement Ref</td>
+                <td class="secondcol bold" align="left">{{:refNumber}}</td>
+            </tr>
+            <tr>
+                <td class="firstcol"  align="right">Date Time</td>
+                <td class="bold secondcol" align="left">{{:date}}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Supplier</td>
+                <td class="secondcol bold" id="supplierName" align="left"></td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Supplier Ref </td>
+                <td class="secondcol bold" align="left">{{:supplierRef}}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Pledge</td>
+                <td class="secondcol bold" id="pledgeName" align="left"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="right" style="width: 400px;">
+        <table class="table_detail_content">
+            <tr>
+                <td class="firstcol"  align="right">Origin</td>
+                <td class="bold secondcol" align="left">Vietnam</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Quality</td>
+                <td class="secondcol bold" align="left">Robusta</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Grade</td>
+                <td class="secondcol bold" id="gradeName" align="left"></td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Packing</td>
+                <td class="secondcol bold" align="left">
+                    <select id="packing" name="packing" style="width: 200px">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Area</td>
+                <td class="secondcol bold" align="left">{{:areaCode}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<table class="cuteBorder" border="1" style="font-size: 13px; margin-top: 25px; margin-left: 5px">
+    <thead>
+        <tr>
+            <th>WNR</th>
+            {{if type == 1}}
+            <th>Pallet</th>
+            <th>Gross weight</th>
+            {{/if}}
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" name="wnr" id="wnr_ref" style="width: 100px !important"/></td>
+            {{if type == 1}}
+            <td id="wnr_pallet_column"><input type="text" name="wnr_palletId" id="wnr_palletId" style="width: 150px !important"/></td>
+            <td><input type="text" name="wnr_gross" id="wnr_gross" style="width: 150px !important"/></td>
+            {{/if}}
+            <td class="textAlignCenter"><input type="button" id="btnMove" value="Move" style="margin-right: 244px" name="perm_64"/></td>
+        </tr>
+    </tbody>
+</table>
+<div id="wnr_content">
+    <table class="cuteBorder" border="1" style="margin-top: 25px; margin-left: 5px; font-size: 13px">
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">WNR Ref</th>
+                <th rowspan="2">Date</th>
+                <th rowspan="2">Packing</th>
+                <th rowspan="2">Num</th>
+                <th rowspan="2">Pallet</th>
+                <th colspan="5">Kgs</th>
+                <th rowspan="2"></th>
+            </tr>
+            <tr>
+                <th>Bags</th>
+                <th>Pallet</th>
+                <th>Gross</th>
+                <th>Tare</th>
+                <th>Net</th>
+            </tr>
+        </thead>
+        <tbody id="weighing_section">
+            {{for wnrs}}
+            <tr id="wnr_row_{{:id}}">
+                <th>{{:no}}</th>
+                <td><input type="text" style="width: 150px" readonly="" value="{{:ref_number}}"/></td>
+                <td><input class="textAlignCenter" value="{{:date}}" style="width: 80px" readonly=""/></td>
+                <td><select style="width: 120px" class='wnr_packing' id="wnr_packing_{{:id}}" vl="{{:packing}}">
+                    </select></td>
+                <td><input type="text" id="wnr_noOfBag_{{:id}}" class="noOfBag" style="width: 40px" value="{{:bags}}" readonly/></td>
+                <td><input type="text" id="wnr_pallet_{{:id}}" value="{{:pallet}}" style="width: 150px"  readonly/></td>
+                <td><input type="text" id="wnr_kgPerBag_{{:id}}" class="bag_weight" style="width: 48px" value="{{:kgPerBag}}" readonly/></td>
+                <td><input type="text" id="wnr_pallet_weight_{{:id}}" class="pallet" value="{{:pallet_weight}}" style="width: 70px"  readonly/></td>
+                <td><input type="text" id="wnr_gross_{{:id}}" class="gross" style="width: 70px" value="{{:gross}}" readonly/></td>
+                <td><input type="text" id="wnr_tare_{{:id}}" class="tare" style="width: 70px" value="{{:tare}}" readonly/></td>
+                <td><input type="text" id="wnr_net_{{:id}}" class="net" style="width: 70px" value="{{:net}}" readonly/></td>
+            </tr>
+            {{/for}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th width="150px"></th>
+                <th width="80px"></th>
+                <th width="120px"></th>
+                <th><input type="text" id="total_bags" style="width: 40px" readonly="" value="{{:total.quantity}}"/></th>
+                <th width="150px"></th>
+                <th><input type="text" id="total_bags_weight" style="width: 48px" readonly="" value="{{:total.total_bags_weight}}"/></th>
+                <th><input type="text" id="total_pallet" style="width: 70px" readonly="" value="{{:total.pallet}}"/></th>
+                <th><input type="text" id="total_gross" style="width: 70px" readonly="" value="{{:total.gross}}"/></th>
+                <th><input type="text" id="total_tare" style="width: 70px" readonly="" value="{{:total.tare}}"/></th>
+                <th><input type="text" id="total_net" style="width: 70px" readonly="" value="{{:total.net}}"/></th>
+                <th border="0"></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<script>
+    $(document).ready(function() {
+        $(".wnr_packing").each(function() {
+            generateSelection("#" + $(this).attr("id"), "PackingMaster", $(this).attr("vl"));
+        });
+        $("input[type=button]").button();
+        $("input[type=submit]").button();
+        generateSelection("#packing", "PackingMaster", '{{:packing}}');
+        loadBasicInfo();
+    });
+    function loadBasicInfo(){
+        var info = $.data(document.body,"mov_info");
+        $("#pledgeName").text(getValueInObj($.data(document.body,"Pledge"),"id",info.pledge,"name"));
+        $("#supplierName").text(getValueInObj($.data(document.body,"Supplier"),"id",info.client,"name"));
+        $("#gradeName").text(getValueInObj($.data(document.body,"GradeMaster"),"id",info.grade,"name"));
+    }
+    function getValueInObj(jArr,key,cmp,resultKey){
+        for (var i=0; i<jArr.length; i++){
+            if (jArr[i][key] == cmp){
+                return jArr[i][resultKey];
+            }
+        }
+    }
+</script>

@@ -1,0 +1,52 @@
+<div id="header">
+    <div id="logo_section">
+        <div id="logo1"></div>
+        <div id="logo2"></div>
+    </div>
+    <div id="menu_section">
+        <div id="menu_background1">
+            <ul class="menu" id="menu_lv1">
+                {{for menu_lv1}}
+                {{if name == 'Home'}}
+                <li><a class="mpcth-icon-home menu_btn {{:chosen}}" href="#" id="{{:id}}" ></a></li>
+                {{else}}
+                <li><a class="menu_btn {{:chosen}}" href="#" onclick='{{:id}}' >{{:name}}</a></li>
+                {{/if}}
+                {{/for}}
+            </ul>
+        </div>
+        <div id="menu_background2">
+            <ul class="menu" id="menu_lv2">
+                {{for menu_lv2}}
+                <li><a class="menu_btn {{:chosen}}" href="#" id='{{:id}}' >{{:name}}</a>
+                    {{if child.length > 0}}
+                    <ul class="menu_lv3">
+                        {{for child}}
+                        <li><a class='menu_btn' href="#" id='{{:id}}'>{{:name}}</a></li>
+                        {{/for}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/for}}
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="breadcrum" style="height: 36px;">
+    <ul id="breadcrum_list" style="float: left">
+        {{for link}}
+            {{if type == 'text'}}
+            <li style="font-size: 13px">{{:name}}</li>
+            {{else}}
+            <li><a class="breadcrum_link" href="#" id="{{:id}}">{{:name}}</a></li>
+            {{/if}}
+        {{/for}}
+    </ul>
+    <div style="float: right; height: 100%">
+        <img class="border_1_solid_black profile_picture" src="images/maleLogo.jpg" width="30px" height="30px" style="display: inline-block;"/>
+        <div style="display: inline-block; vertical-align: top; margin-top: 10px">
+            <a href="#" class="bold" id="span_fullname" onclick="goTo({{:profile}})">{{:username}}</a>
+            <a href="#" onclick='logout()' >(Logout)</a>
+        </div>
+    </div>
+</div>

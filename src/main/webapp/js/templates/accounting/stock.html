@@ -1,0 +1,22 @@
+<table class="sStorage">
+	<tbody>
+		<tr class="sTitle">
+			<td>Date</td>
+            <td>Client</td> 
+            <td>Tons</td> 
+            <td>Cost</td> 
+        </tr>
+        {{for client}}
+        <tr class="sBody">
+        	<td width="30px">{{:date}}</td>
+        	<td width="150px">{{:client}}</td>
+        	<td width="40px" class="clientTons formatNumber">{{:tons}}</td>
+        	<td width="40px" class="clientCost formatNumber">{{:cost}}</td>
+        </tr>
+        {{/for}}
+        <tr class="sTotal">
+        	<td class="sLeft" colspan="3">Total</td>
+        	<td class="formatNumber">{{:total}}</td>
+        </tr>
+	</tbody>
+</table>

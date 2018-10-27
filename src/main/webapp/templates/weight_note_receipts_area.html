@@ -1,0 +1,34 @@
+    <!--BEGIN: main-->
+<div id="wnr_info" style="margin-left: 280px; text-align: center">
+    <div style="margin-right: 300px; margin-bottom: 20px">
+        <label id="cell_info" >Weight Note Receipts on </label>
+    </div>
+    
+    <table class="cuteBorder" style="margin-left: -120px">
+        <thead>
+            <tr>
+                <th>Weight Note Receipt Ref</th>
+                <th>&nbsp;</th>
+                <th>Net.Weight(Kgs)</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Begin: item-->
+            <tr>
+                <td>{WNRef}</td>
+                <td>&nbsp;</td>
+                <td>{netweight}</td>
+                <td>{grade}</td>
+            </tr>
+            <!--END: item-->
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function() {
+        $("#cell_info").append($("#area").val());
+    });
+</script>
+<!--END: main-->
+

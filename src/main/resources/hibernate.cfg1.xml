@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/wsmill3?characterEncoding=UTF-8</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/ShippingLineMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/PackingMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/ProcessingInstruction.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/User.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Warehouse.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WarehouseCell.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/PortMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/PalletMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/City.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/AccessoryMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Country.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WnrAllocation.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/NotifyParty.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Authorization.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WeightNoteReceipt.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/ShippingInstruction.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/ProcessingType.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Documents.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WarehouseReceipt.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Page.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Accessories.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WeightNote.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/CellType.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/DeliveryInstruction.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/CompanyMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WarehouseMap.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/QualityReport.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/DocumentMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Menu.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/GradeMaster.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/CupTest.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/CompanyType.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/CompanyRole.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/StockHistorical.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WeightLoss.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/ClientPackingPrice.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/WnrMovment.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/StockHistories.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/Movement.hbm.xml"/>
+    <mapping resource="com/swcommodities/wsmill/hibernate/dto/PriceList.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

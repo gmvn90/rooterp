@@ -1,0 +1,65 @@
+<!-- BEGIN: save -->
+<td><input type="button" class="wnr_save" value="Save"/></td>
+<!-- END: save -->
+<!-- BEGIN: del -->
+<td><input type="button" class="wnr_delete" value="Del"/></td>
+<!-- END: del -->
+<!-- BEGIN: table -->
+<table class="cuteBorder" border="1" style="margin-top: 25px; margin-left: 5px; font-size: 13px">
+    <thead>
+        <tr>
+            <th rowspan="2">No</th>
+            <th rowspan="2">WNR Ref</th>
+            <th rowspan="2">Date</th>
+            <th rowspan="2">Packing</th>
+            <th rowspan="2">Num</th>
+            <th colspan="4">Kgs</th>
+            <!-- BEGIN: header -->
+            <th rowspan="2"></th>
+            <!-- END: header -->
+        </tr>
+        <tr>
+            <th>Bags</th>
+            <th>Gross</th>
+            <th>Tare</th>
+            <th>Net</th>
+        </tr>
+    </thead>
+    <tbody id="weighing_section">
+        <!-- BEGIN: row -->
+        <tr id="wnr_row_{id}">
+            <th>{no}</th>
+            <td><input type="text" style="width: 150px" readonly="" value="{ref_number}"/></td>
+            <td><input class="textAlignCenter" value="{datetime}" style="width: 80px" readonly=""/></td>
+            <td><select style="width: 120px" id="wnr_packing_{id}">
+                    {packing_option}
+                </select></td>
+            <td><input type="text" id="wnr_noOfBag_{id}" class="noOfBag" style="width: 40px" value="{numberOfBag}" {read_only}/></td>
+            <td><input type="text" id="wnr_kgPerBag_{id}" class="bag_weight" style="width: 48px" value="{kgPerBag}" {read_only}/></td>
+            <td><input type="text" id="wnr_gross_{id}" class="gross" style="width: 70px" value="{gross}" {read_only}/></td>
+            <td><input type="text" id="wnr_tare_{id}" class="tare" style="width: 70px" value="{tare}" {read_only}/></td>
+            <td><input type="text" id="wnr_net_{id}" class="net" style="width: 70px" value="{net}" {read_only}/></td>
+            <input type="hidden" class="opts" value="{opts}"/>
+            {btnsave}
+            {btndel}
+        </tr>
+        <!-- END: row -->
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Total</th>
+            <th width="150px"></th>
+            <th width="80px"></th>
+            <th width="120px"></th>
+            <th><input type="text" id="total_bags" style="width: 40px" readonly="" value="{total_bags}"/></th>
+            <th><input type="text" id="total_bags_weight" style="width: 48px" readonly="" value="{total_bags_weight}"/></th>
+            <th><input type="text" id="total_gross" style="width: 70px" readonly="" value="{total_gross}"/></th>
+            <th><input type="text" id="total_tare" style="width: 70px" readonly="" value="{total_tare}"/></th>
+            <th><input type="text" id="total_net" style="width: 70px" readonly="" value="{total_net}"/></th>
+            <!-- BEGIN: footer -->
+            <th border="0"></th>
+            <!-- END: footer -->
+        </tr>
+    </tfoot>
+</table>
+<!-- END: table -->

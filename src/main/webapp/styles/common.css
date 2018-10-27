@@ -1,0 +1,556 @@
+table.quality_table {
+
+}
+
+table.quality_table td {
+    width: 85px;
+}
+
+table.detail_info_table {
+
+}
+
+table.detail_info_table td {
+    padding: 5px;
+}
+
+
+textarea {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+ul.listweightNotes_area {
+    height: auto;
+    width: auto;
+    margin-right: 3px;
+    text-align: left;
+    background-color: whitesmoke;
+    position: absolute;
+    list-style-type: none;
+    border: 1px solid;
+}
+
+ul.listweightNotes_area li{
+    display: -webkit-box;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #ccc;
+    font-size: 9pt;
+    margin-left: -38px;
+}
+
+ul.listweightNotes_area li:last-child {
+    border: none;
+}
+/* */
+ul.listCellType {
+    height: auto;
+    width: auto;
+    margin-right: 3px;
+    text-align: left;
+    background-color: activeborder;
+    position: absolute;
+    list-style-type: none;
+}
+
+ul.listCellType li{
+    display: -webkit-box;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13pt;
+    margin-left: -38px;
+}
+ul.listCellType li:last-child {
+    border: none;
+}
+
+ul.listCellType li:hover{
+    cursor: pointer;
+    background: none repeat scroll 0 0 white; 
+}
+
+ul.listCellType li div{
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 20px;
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+ul.listCellType li div.storage{
+    background-color: cornsilk;
+}
+ul.listCellType li div.room_machine{
+    background-color: red;
+}
+ul.listCellType li div.out_of_use{
+    background-color: gray;
+}
+ul.listCellType li div.door_hor{
+    background-color: red;
+}
+ul.listCellType li div.door_ver{
+    background-color: red;
+}
+ul.listCellType li div.wall{
+    background-color: black;
+}
+ul.listCellType li div.wall_hor{
+    background-color: black;
+}
+ul.listCellType li div.wall_ver{
+    background-color: black;
+}
+
+/*---------------------*/
+/* warehouse map editable area table */
+table.warehousemap_editable_area {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 9pt !important;
+}
+
+
+table.warehousemap_editable_area td.storage{
+    background-color: cornsilk;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap_editable_area tr td.storage:hover{
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.room_machine{
+    background-color: red;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap_editable_area tr td.room_machine:hover{
+    background-color: #f56161;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.out_of_use{
+    background-color: gray;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap_editable_area tr td.out_of_use:hover{
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.door_hor{
+    background-color: red;
+    color: white;
+    width: 55px;
+    height: 12px;
+}
+table.warehousemap_editable_area tr td.door_hor:hover{
+    background-color: #f56161;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.door_ver{
+    background-color: red;
+    color: white;
+    width: 12px;
+    height: 70px;
+}
+table.warehousemap_editable_area tr td.door_ver:hover{
+    background-color: #f56161;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.wall{
+    background-color: black;
+    color: white;
+    width: 12px;
+    height: 12px;
+    font-size: 9pt !important;
+}
+table.warehousemap_editable_area tr td.wall:hover{
+    background-color: #655150;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.wall_hor{
+    background-color: black;
+    color: white;
+    width: 55px;
+    height: 12px;
+    font-size: 9pt !important;
+}
+table.warehousemap_editable_area tr td.wall_hor:hover{
+    background-color: #655150;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area td.wall_ver{
+    background-color: black;
+    color: white;
+    width: 12px;
+    height: 70px;
+    font-size: 9pt !important;
+}
+table.warehousemap_editable_area tr td.wall_ver:hover{
+    background-color: #655150;
+    cursor: pointer;
+}
+
+table.warehousemap_editable_area tr td.storage{
+    text-align: right;
+}
+table.warehousemap_editable_area tr td.room_machine{
+    text-align: right;
+}
+table.warehousemap_editable_area tr td.out_of_use{
+    text-align: right;
+}
+/* warehouse map editable area table */
+/* --------------------*/
+
+/*---------------------*/
+/* warehouse map editable table */
+table.warehousemap_editable {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 9pt !important;
+}
+
+
+table.warehousemap_editable td.storage{
+    background-color: cornsilk;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap_editable tr td.storage:hover{
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.room_machine{
+    background-color: red;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap_editable tr td.room_machine:hover{
+    background-color: #f56161;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.out_of_use{
+    background-color: gray;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap_editable tr td.out_of_use:hover{
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.door_hor{
+    background-color: red;
+    color: white;
+    width: 55px;
+    height: 12px;
+}
+table.warehousemap_editable tr td.door_hor:hover{
+    background-color: #f56161;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.door_ver{
+    background-color: red;
+    color: white;
+    width: 12px;
+    height: 70px;
+}
+table.warehousemap_editable tr td.door_ver:hover{
+    background-color: #f56161;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.wall{
+    background-color: black;
+    color: white;
+    width: 12px;
+    height: 12px;
+    font-size: 9pt !important;
+}
+table.warehousemap_editable tr td.wall:hover{
+    background-color: #655150;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.wall_hor{
+    background-color: black;
+    color: white;
+    width: 55px;
+    height: 12px;
+    font-size: 9pt !important;
+}
+table.warehousemap_editable tr td.wall_hor:hover{
+    background-color: #655150;
+    cursor: pointer;
+}
+
+table.warehousemap_editable td.wall_ver{
+    background-color: black;
+    color: white;
+    width: 12px;
+    height: 70px;
+    font-size: 9pt !important;
+}
+table.warehousemap_editable tr td.wall_ver:hover{
+    background-color: #655150;
+    cursor: pointer;
+}
+/* warehouse map editable table */
+/* --------------------*/
+
+/*---------------------*/
+/* warehouse map table */
+table.warehousemap {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 9pt !important;
+}
+
+table.warehousemap td.storage{
+    background-color: cornsilk;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap td.storage:hover{
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+table.warehousemap td.room_machine{
+    background-color: red;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap td.out_of_use{
+    background-color: gray;
+    width: 55px;
+    height: 70px;
+}
+table.warehousemap td.door_hor{
+    background-color: red;
+    color: white;
+    width: 55px;
+    height: 12px;
+}
+table.warehousemap td.door_ver{
+    background-color: red;
+    color: white;
+    width: 12px;
+    height: 70px;
+}
+table.warehousemap td.wall{
+    background-color: black;
+    color: white;
+    width: 12px;
+    height: 12px;
+}
+table.warehousemap td.wall_hor{
+    background-color: black;
+    color: white;
+    width: 55px;
+    height: 12px;
+}
+table.warehousemap td.wall_ver{
+    background-color: black;
+    color: white;
+    width: 12px;
+    height: 70px;
+}
+/* warehouse map table */
+/* --------------------*/
+table.note_table{
+    text-align: left;
+}
+table.note_table td.storage{
+    background-color: cornsilk;
+    width: 20px;
+    height: 20px;
+}
+table.note_table td.room_machine{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+}
+table.note_table td.out_of_use{
+    background-color: gray;
+    width: 20px;
+    height: 20px;
+}
+table.note_table td.door{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+}
+table.note_table td.wall{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+}
+
+table.cuteBorder {
+    border-collapse: collapse;
+}
+table.cuteBorder tbody tr td, table.cuteBorder thead tr th {
+    border-bottom: 1px solid black;
+    padding: 1px;
+}
+table.cuteBorder thead tr th, table.cuteBorder tbody tr th {
+    background-color: #EEEEEE;
+    border-top: 1px solid black;
+}
+table.ins thead tr th {
+    font-weight: bolder;
+    text-align: center;
+}
+.fontBolder {
+    font-weight: bolder;
+}
+.textAlignLeft {
+    text-align: left;
+}
+.textAlignRight {
+    text-align: right;
+}
+.textAlignCenter {
+    text-align: center;
+}
+div.main_container {
+    border: 1px solid gray;
+    padding: 5px;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+div.container_12 {
+    border: 1px solid gray;
+    padding: 5px;
+}
+.cell input[type="text"] {
+    width: 97%;
+}
+ul.inline li {
+    display: inline;
+}
+.label {
+    line-height: 20px;
+    margin-right: 14px;
+}
+.cell {
+    /*font-size: 14px;*/
+    height: 30px;
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+.pc100 {
+    width: 100%;
+}
+.pc40 {
+    width: 40%;
+}
+.pc45 {
+    width: 45%;
+}
+.pc55 {
+    width: 55%;
+}
+.pc50 {
+    width: 50%;
+}
+.pc30 {
+    width: 30%;
+}
+.pc40 {
+    width: 40%;
+}
+.pc60 {
+    width: 60%;
+}
+.pc25 {
+    width: 20%;
+}
+.border {
+    border: 1px solid #ddd;
+}
+ul li {
+    list-style: none outside none;
+}
+ul.ref_list {
+    border: 1px solid #B8C2CC;
+    font-size: 13px;
+    height: 400px;
+    list-style: none outside none;
+    margin: 0;
+    overflow: auto;
+    padding: 10px;
+    text-align: left;
+}
+ul.ref_list li,table.table_filter ul li {
+    cursor: pointer;
+    font-size: 13px !important;
+    line-height: 20px;
+    text-align: left;
+}
+ul.ref_list li:hover, ul.ref_list li.chosen,table.table_filter ul li:hover,table.table_filter ul li.chosen {
+    background: none repeat scroll 0 0 #599FCF;
+    color: white;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+ul.filter_list{
+    height: 120px;
+    overflow-x: auto;
+    margin: 5px;
+    padding: 0;
+}
+
+li.filter_child {
+    border: 1px solid #B8C2CC;
+    margin: 5px;
+    padding: 5px;
+}
+li.filter_child ul {
+    height: 70px;
+    overflow-y: scroll;
+}
+table.table_filter {
+    padding: 10px;
+}
+table.table_filter, table.table_filter tr th, table.table_filter tr td {
+    border: 1px solid #B8C2CC;
+    border-collapse: collapse;
+}
+table.table_filter ul {
+    padding-left: 5px;
+    height: 100px;
+    overflow: auto;
+}
+.title{font-weight: bold; font-size: 13px; padding: 5px}

@@ -1,0 +1,11 @@
+{{for users}}
+<div class="user" id="{{:id}}" style="border-bottom: 1px solid grey; height: 35px; cursor: pointer" onclick="loadUserInfo('{{:id}}')">
+    <div class="percentage_30" style="float: left">
+        <img class="left" src="{{:img}}" width="35px" height="35px" style="border-right: 1px solid grey;" />
+    </div>
+    <div class="percentage_70" style="float: left; display: inline;">
+        <span>{{:userName}}</span><br/>
+        <span>{{:fullName}}</span>
+    </div>
+</div>
+{{/for}}

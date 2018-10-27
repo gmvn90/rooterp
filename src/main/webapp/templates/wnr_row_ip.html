@@ -1,0 +1,26 @@
+<!-- BEGIN: save -->
+<td><input type="button" class="wnr_save" value="Save"/></td>
+<!-- END: save -->
+<!-- BEGIN: del -->
+<td><input type="button" class="wnr_delete" value="Del"/></td>
+<!-- END: del -->
+<!-- BEGIN: row -->
+<tr id="wnr_row_{id}">
+    <th>{no}</th>
+    <td><input type="text" style="width: 150px" readonly="" value="{ref_number}"/></td>
+    <td><input class="textAlignCenter" value="{datetime}" style="width: 80px" readonly=""/></td>
+    <td><select style="width: 120px" id="wnr_packing_{id}">
+            {packing_option}
+        </select></td>
+    <td><input type="text" id="wnr_noOfBag_{id}" class="noOfBag" style="width: 40px" value="{numberOfBag}" {read_only}/></td>
+    <td><input type="text" id="wnr_kgPerBag_{id}" class="bag_weight" style="width: 48px" value="{kgPerBag}" {read_only}/></td>
+    <td><input type="text" id="wnr_gross_{id}" class="gross" style="width: 70px" value="{gross}" {read_only}/></td>
+    <td><input type="text" id="wnr_tare_{id}" class="tare" style="width: 70px" value="{tare}" {read_only}/></td>
+    <td><input type="text" id="wnr_net_{id}" class="net" style="width: 70px" value="{net}" {read_only}/></td>
+    <input type="hidden" class="opts" value="{options}"/>
+<!--    <td><input type="button" class="wnr_save" value="Save"/></td>
+    <td><input type="button" class="wnr_delete" value="Del"/></td>-->
+    {btnsave}
+    {btndel}
+</tr>
+<!-- END: row -->

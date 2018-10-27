@@ -1,0 +1,139 @@
+<style>
+    table#company_dialog input, table#company_dialog select, table#company_dialog textarea { width: 100%;}
+    div#detailBox {padding-top: 0px;}
+</style>
+<h3>Company Information</h3>
+<table class="percentage_95 center" id="company_dialog" cellpadding="5">
+    <tr>
+        <th></th>
+        <th>English</th>
+        <th>Vietnamese</th>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Full Name</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="full_name" name="full_name" value="{{:fullName}}"/>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="full_name_vn" name="full_name_vn" value="{{:fullNameVn}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Name</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="txt_name" name="name" value="{{:name}}"/>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="txt_name_vn" name="name_vn" value="{{:nameVn}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Address #1</span>
+        </td>
+        <td class="alignRight">
+            <textarea id="address_1" name="address_1">{{:address1}}</textarea>
+            <!--<input class="alignRight" type="text" id="address_1" name="address_1" value="{address_1}"/>-->
+        </td>
+        <td class="alignRight">
+            <textarea id="address_1_vn" name="address_1_vn">{{:address1Vn}}</textarea>
+            <!--<input class="alignRight" type="text" id="address_1_vn" name="address_1_vn" value="{address_1_vn}"/>-->
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Address #2</span>
+        </td>
+        <td class="alignRight">
+            <textarea id="address_2" name="address_2">{{:address2}}</textarea>
+            <!--<input class="alignRight" type="text" id="address_2" name="address_2" value="{address_2}"/>-->
+        </td>
+        <td class="alignRight">
+            <textarea id="address_2_vn" name="address_2_vn">{{:address2Vn}}</textarea>
+            <!--<input class="alignRight" type="text" id="address_2_vn" name="address_2_vn" value="{address_2_vn}"/>-->
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Representative</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="txt_representative" name="txt_representative" value="{{:representative}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Representative Role</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="representative_role" name="representative_role" value="{{:representativeRole}}"/>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="representative_role_vn" name="representative_role_vn" value="{{:representativeRoleVn}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Tax Code</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="tax_code" name="tax_code" value="{{:taxCode}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Email</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="txt_email" name="txt_email" value="{{:email}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Fax</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="txt_fax" name="txt_fax" value="{{:fax}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Telephone</span>
+        </td>
+        <td class="alignRight">
+            <input class="alignRight" type="text" id="txt_telephone" name="txt_telephone" value="{{:telephone}}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Country</span>
+        </td>
+        <td class="alignRight">
+            <select type="text" id="country_id" name="country_id">
+                <option value="-1"></option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="alignLeft">
+            <span>Active</span>
+        </td>
+        <td class="alignLeft">
+            {{if status == true}}
+            <input class="alignLeft" style="width: 20px; margin-left: 0px" type="checkbox" id="txt_active" name="txt_active" value="1" checked=""/>
+            {{else}}
+            <input class="alignLeft" style="width: 20px; margin-left: 0px" type="checkbox" id="txt_active" name="txt_active" value="1"/>
+            {{/if}}
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    var opt = {all: true};
+    $(document).ready(function() {
+            generateSelection("#country_id", "Country", '{{:countryId}}', {offOverlay: false});
+    });
+</script>

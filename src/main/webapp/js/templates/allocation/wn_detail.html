@@ -1,0 +1,47 @@
+<table class="wn_in_detail">
+    <thead>
+        <tr>
+            <th width="150px">
+                Weight Note Receipt
+            </th>
+            <th width="80px">
+                Gross Weight
+            </th>
+            <th width="80px">
+                Tare Weight
+            </th>
+            <th width="80px">
+                Net Weight
+            </th>
+            {{if show_out == 1}}
+            <th width="80px">Status</th>
+            {{/if}}
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {{for wnrs}}
+    <tr>
+        <td>{{:ref_number}}</td>
+        <td>{{:gross}}</td>
+        <td>{{:tare}}</td>
+        <td>{{:net}}</td>
+        {{if show_out == 1}}
+        {{if out_status == 1 }}
+        <td>Weighted Out</td>
+        {{else out_status == 0}}
+        <td>Pending</td>
+        {{/if}}
+        {{/if}}
+        <td><input type="checkbox" id="ck_wnr_{{:wnr_id}}" class="ck_wnr"></td>
+    </tr>
+    {{/for}}
+    </tbody>
+</table>
+<input type="hidden" id="dialog_wn_id" value="{{:wn_id}}"/>
+<input type="button" id="{{:function}}_wnr" value="{{:status}}" style="float: right; margin-right: 15px" name="perm_{{:perm}}"/>
+<input type="button" id="close_dialog" value="Close" style="float: left; margin-left: 15px"/>
+<style>
+    table.wn_in_detail {margin: 35px auto 15px auto}
+    table.wn_in_detail, table.wn_in_detail th, table.wn_in_detail td {border: 1px solid black; border-collapse: collapse}
+</style>

@@ -1,0 +1,349 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../styles/960.css" rel="stylesheet"/>
+        <link href="../styles/style.css" rel="stylesheet"/>
+        <link href="../styles/common.css" rel="stylesheet"/>
+        <style>
+            table.table_detail_content {line-height: 20px; margin-top: 15px; font-size: 13px}
+            table.table_detail_content,table.table_detail_content td {border-collapse: collapse}
+            table.table_detail_content td {padding: 5px}
+            table.table_detail_content td.firstcol {width: 150px;}
+            table.table_detail_content td.secondcol {width: 200px; padding-left: 20px !important;}
+        </style>
+    </head>
+    <body>
+        <div style="width: 1500px ! important; padding: 15px; background: none repeat scroll 0% 0% white; height: 750px;" class="container_16 border" id="wrapper">
+            <!-- left layer -->
+            <div style="width: 260px" class="left border">
+                <!-- 3 parts: title at the top, ref_list on the middle, add and del button at the bottom -->
+                <!-- title -->
+                <div class="title">
+                    WN Ref
+                </div>
+                <!-- ref_list section would have 2 parts: input element to input search String and the list that displays the result -->
+                <div class="pc100">
+                    <input type="text" style="width: 240px; margin-left: 5px" name="filter_ref" id="filter_ref">
+                    <ul style="margin-top: 15px; margin-left: 5px; padding-left: 10px; width: 222px !important" id="process_list" class="ref_list">
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                        <li>WN-13-00001</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 15px" class="pc100">
+                    <input type="button" value="Del" id="btn_delete" class="right">
+                    <input type="button" value="Add" id="btn_add_new" class="right">
+                </div>
+            </div>
+            <!-- right layer -->
+            <div style="width: 1200px !important; margin-right: 0px !important;" class="grid_14 right">
+                <table class="table_filter">
+                    <thead>
+                        <tr style="font-size: 13px">
+                            <th width="100px">Type</th>
+                            <th width="100px">Status</th>
+                            <th width="190px">Reference Number</th>
+                            <th width="190px">Grade</th>
+                            <th width="190px">Client</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" class="text_filter_child">
+                                <ul id="type_filter">
+                                    <li class="chosen" id="wnType_1">Import</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <input type="text" class="text_filter_child">
+                                <ul id="type_filter">
+                                    <li class="chosen" id="wnType_1">Import</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 190px" class="text_filter_child">
+                                <ul id="type_filter">
+                                    <li class="chosen" id="wnType_1">Import</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 190px;" class="text_filter_child">
+                                <ul id="type_filter">
+                                    <li class="chosen" id="wnType_1">Import</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <input type="text" style="width:190px" class="text_filter_child">
+                                <ul id="type_filter">
+                                    <li class="chosen" id="wnType_1">Import</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                    <li id="wnType_2">In-Process</li>
+                                    <li id="wnType_3">Ex-Process</li>
+                                    <li id="wnType_4">Export</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="wn_content" style="width: 1200px !important; min-height: 450px; height: auto; overflow: hidden;margin-right: 0px; margin-top: 15px" class="border">
+                    <div style="width: 1000px; height: auto; overflow: hidden">
+                        <div class="left" style="width: 400px;">
+                            <table class="table_detail_content">
+                                <tr>
+                                    <td class="firstcol" align="right">Weight Note Ref</td>
+                                    <td class="secondcol bold" align="left">WN-13-00001</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol"  align="right">Date Time</td>
+                                    <td class="bold secondcol" align="left">27-May-13   07:50</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">DI Ref</td>
+                                    <td class="secondcol bold" align="left">SWC-BD-DI-13-00362</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Supplier</td>
+                                    <td class="secondcol bold" align="left">Intimex Bao Loc</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Supplier Ref </td>
+                                    <td class="secondcol bold" align="left">SWCVN-13-00818</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Truck No</td>
+                                    <td class="secondcol" align="left"><input type="text" name="truck_no" id="truck_no" value=""/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="right" style="width: 400px;">
+                            <table class="table_detail_content">
+                                <tr>
+                                    <td class="firstcol" align="right">Quality Ref</td>
+                                    <td class="secondcol bold" align="left">WN-13-00001</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol"  align="right">Origin</td>
+                                    <td class="bold secondcol" align="left">Vietnam</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Quality</td>
+                                    <td class="secondcol bold" align="left">Robusta</td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Grade</td>
+                                    <td class="secondcol bold" align="left">
+                                        <select id="grade" name="grade" style="width: 200px">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Packing</td>
+                                    <td class="secondcol bold" align="left">
+                                        <select id="packing" name="packing" style="width: 200px">
+                                            <option value=""></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Driver</td>
+                                    <td class="secondcol" align="left"><input type="text" name="driver_name" id="driver_name" value=""/></td>
+                                </tr>
+                                <tr>
+                                    <td class="firstcol" align="right">Area</td>
+                                    <td class="secondcol" align="left"><input type="text" name="area" id="area" value="" readonly=""/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <table class="cuteBorder" border="1" style="font-size: 13px; margin-top: 25px; margin-left: 5px">
+                        <thead>
+                            <tr>
+                                <th>Scale No</th>
+                                <th>WNR Packing</th>
+                                <th>No of bags</th>
+                                <th>Pallet ID</th>
+                                <th>Gross weight</th>
+                                <th>Show</th>
+                                <th>Save</th>
+                                <th>Print</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><select style="width: 100px" name="slcScaleNo">
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select></td>
+                                <td><select style="width: 150px" name="slcWNRPack">
+                                        <option>PP Bag</option>
+                                        <option>T Bag</option>
+                                    </select></td>
+                                <td><input type="text" name="txtNoOfBag" value="0" style="width: 100px !important"/></td>
+                                <td><input type="text" name="txtPalletID" style="width: 150px !important"/></td>
+                                <td><input type="text" name="txtGrossWeight" style="width: 150px !important"/></td>
+                                <td class="textAlignCenter"><input type="checkbox" name="chkShow" value="ON" /></td>
+                                <td class="textAlignCenter"><input type="checkbox" name="chkShow" value="ON" /></td>
+                                <td class="textAlignCenter"><input type="checkbox" name="chkShow" value="ON" /></td>
+                                <td class="textAlignCenter"><input type="button" name="btnAdd" value="Add" style="margin-right: 244px"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="cuteBorder" border="1" style="margin-top: 25px; margin-left: 5px; font-size: 13px">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">No</th>
+                                <th rowspan="2">WNR Ref</th>
+                                <th rowspan="2">Scale</th>
+                                <th rowspan="2">Date</th>
+                                <th rowspan="2">Time</th>
+                                <th rowspan="2">Parking</th>
+                                <th rowspan="2">Num</th>
+                                <th colspan="5">Kgs</th>
+                                <th rowspan="2">Del</th>
+                                <th rowspan="2">Sav</th>
+                            </tr>
+                            <tr>
+                                <th>Bags</th>
+                                <th>Pallet</th>
+                                <th>Gross</th>
+                                <th>Tare</th>
+                                <th>Net</th>
+                            </tr>
+                        </thead>
+                        <tbody id="weighing_section">
+                            <tr>
+                                <th>1</th>
+                                <td><input type="text" name="txtWR" style="width: 150px"/></td>
+                                <td><select name="slcScale" style="width: 70px">
+                                        <option>Scale 1</option>
+                                        <option>Scale 2</option>
+                                    </select></td>
+                                <td><input class="textAlignCenter" type="text" name="txtDate" value="26-Jun-13" style="width: 80px"/></td>
+                                <td><input class="textAlignCenter" type="text" name="txtTime" value="13:02" style="width: 80px"/></td>
+                                <td><select style="width: 120px" name="slcWNRPack">
+                                        <option>PP Bag</option>
+                                        <option>T Bag</option>
+                                    </select></td>
+                                <td><input type="text" name="txtNum" style="width: 40px"/></td>
+                                <td><input type="text" name="txtBags" style="width: 48px"/></td>
+                                <td><input type="text" name="txtPallet" style="width: 70px"/></td>
+                                <td><input type="text" name="txtGross" style="width: 70px"/></td>
+                                <td><input type="text" name="txtTare" style="width: 70px"/></td>
+                                <td><input type="text" name="txtNet" style="width: 70px"/></td>
+                                <td><input type="button" name="btnAdd" value="Add"/></td>
+                                <td><input type="button" name="btnAdd" value="Del"/></td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <td><input type="text" name="txtNum" style="width: 40px"/></td>
+                                <td><input type="text" name="txtBags" style="width: 48px"/></td>
+                                <td><input type="text" name="txtPallet" style="width: 70px"/></td>
+                                <td><input type="text" name="txtGross" style="width: 70px"/></td>
+                                <td><input type="text" name="txtTare" style="width: 70px"/></td>
+                                <td><input type="text" name="txtNet" style="width: 70px"/></td>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-left: 100px; margin-top: 10px">
+                        <label>Completed</label>
+                        <input type="checkbox" value="ON" name="chkComplete"/>
+                    </div>
+                </div>
+                <div class="right" style="width: 1200px; margin-top: 20px;">
+                    <input class="left" type="button" value="Save" />
+                    <input class="right" type="button" value="List View" />
+                    <input class="right" type="button" value="WR" />
+                    <input class="right" type="button" value="WNR" />
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

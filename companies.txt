@@ -1,0 +1,253 @@
+###CLIENT###
+   1 - Nhan Dinh
+   7 - Thủy Tiến
+   8 - Bá Thành
+  10 - Hoàng Quyến
+  17 - Truong Long Tan
+  21 - Vinacafe Nam TN
+  31 - Trang Thịnh Vinh
+  33 - BAN MAI
+  44 - Ngọc Ánh
+  50 - Olam
+  91 - SW Commodities
+  92 - An Phong
+  93 - Quille
+  94 - Global Coffee Traders
+  95 - Tchibo
+  96 - Blaser
+  98 - Touton
+  99 - Alois Dallmayr
+ 101 - Walter Matter SA
+ 104 - Darboven
+ 106 - PHUOC SON
+ 107 - SWCVN
+ 108 - Vĩnh HIệp
+ 114 - Toàn Hằng
+ 116 - Loan Hiệp
+ 117 - Bảo Phúc Khang
+ 119 - Hoa Thuan
+ 120 - Nam Hoa Loi
+ 122 - Hồng Đức
+ 123 - Vạn Thành
+ 124 - Phúc Minh
+ 132 - Bích Liên
+ 133 - Nam Hải Lan
+ 137 - Coex
+ 140 - Yen Thanh
+ 142 - Strauss
+ 156 - Intimex Center
+ 163 - Lanco Trading AG
+ 164 - V-G-B Trading
+ 166 - Hacofco
+ 167 - Kofinvest
+ 168 - Westhoff
+ 170 - Vũ Yến Thành
+ 171 - Hùng Hưng
+ 172 - Sunwah Beverages
+ 174 - Icona
+ 176 - Tiến Thịnh
+ 178 - Thảo Kiệt
+ 180 - LIEN THANH
+ 181 - Thanh Tín
+ 182 - Cao Nguyen
+ 185 - Phương Viên
+ 188 - Group Sopex
+ 189 - AN LOC
+ 190 - Capheex
+ 192 - Lanco Portugal
+ 194 - Mitsui
+ 195 - Fichaux
+ 197 - Meo
+ 198 - LÂM KIM HẢI
+ 199 - Vinacafe Nam Tây Nguyên
+ 200 - Son Huyen Phat
+ 203 - Marubeni
+ 205 - Anh Tuấn
+ 206 - Đức Hòa ĐăkLăk
+ 209 - Nam Trà Đắk Nông
+ 211 - Thanh An
+ 212 - Efico
+ 213 - An Vinh
+ 215 - Nguyên Dũng GiaLai
+ 216 - Finagra Group
+ 217 - Hương Long Đắk Nông
+ 218 - Noble
+ 219 - Sucden
+ 222 - Intimex NT-DL
+ 223 - Gabesco
+ 224 - Mercafe
+ 225 - Tong Teik
+ 226 - Geprocor
+ 227 - Sopex Asia
+ 228 - Cafes Carrion
+ 229 - Itochu
+ 231 - Coprocafe
+ 232 - Nedcoffee BV
+ 233 - PHÚC SƯƠNG
+ 235 - Bảo Ngôn
+ 237 - Pieraerts
+ 238 - MC Grecof SA
+ 242 - NGỌC THU
+ 243 - Genesis
+ 244 - CAO NGUYÊN BAZAN
+ 246 - COFIROASTERS S.A
+ 248 - List & Beisler GmbH
+ 250 - IBERICAFÉ Import, S.L.
+ 253 - Melitta
+ 256 - COFCO AGRI
+
+
+###PLEDGERS###
+ 183 - Techcombank
+ 191 - Eximbank
+
+
+###CONTROLLERS###
+   1 - Nhan Dinh
+  99 - Alois Dallmayr
+ 214 -
+ 186 - VCCC
+ 107 - SWCVN
+
+
+###SUPPLIERS###
+ 257 - TUYẾN NHÀI
+   3 - Simexco
+   7 - Thủy Tiến
+   8 - Bá Thành
+  10 - Hoàng Quyến
+  15 - Haprosimex JSC
+  17 - Truong Long Tan
+  18 - Hà Bình
+  19 - Phuoc An
+  21 - Vinacafe Nam TN
+  30 - Loan Bang
+  31 - Trang Thịnh Vinh
+  33 - BAN MAI
+  44 - Ngọc Ánh
+  61 - Bình Hà Ban Mê
+  63 - Intimex BMT
+  92 - An Phong
+ 101 - Walter Matter SA
+ 106 - PHUOC SON
+ 107 - SWCVN
+ 108 - Vĩnh HIệp
+ 110 - HOA TRANG
+ 111 - Hoa Trang-Gia Lai
+ 112 - Nam Phong
+ 114 - Toàn Hằng
+ 115 - Quang Huy
+ 116 - Loan Hiệp
+ 117 - Bảo Phúc Khang
+ 118 - Toàn Phát Ban Mê
+ 119 - Hoa Thuan
+ 120 - Nam Hoa Loi
+ 122 - Hồng Đức
+ 123 - Vạn Thành
+ 124 - Phúc Minh
+ 126 - Tan Thuan Gia Lai
+ 128 - CS Thùy Dung
+ 130 - Toàn Tâm
+ 132 - Bích Liên
+ 133 - Nam Hải Lan
+ 135 - Tien Phat
+ 140 - Yen Thanh
+ 142 - Strauss
+ 144 - Phượng Hoàng
+ 152 - Trang Huy
+ 156 - Intimex Center
+ 169 - My Anh
+ 170 - Vũ Yến Thành
+ 171 - Hùng Hưng
+ 173 - Bùi Mạnh
+ 175 - MY HANH
+ 176 - Tiến Thịnh
+ 177 - CA PHE DA LAT
+ 178 - Thảo Kiệt
+ 179 - NHAT TAN
+ 180 - LIEN THANH
+ 181 - Thanh Tín
+ 182 - Cao Nguyen
+ 184 - INTIMEX DA NANG JSC
+ 185 - Phương Viên
+ 187 - Tám Trình
+ 196 - Tân Hưng
+ 198 - LÂM KIM HẢI
+ 199 - Vinacafe Nam Tây Nguyên
+ 200 - Son Huyen Phat
+ 201 - VIỆT LONG
+ 202 - HUY HÙNG
+ 205 - Anh Tuấn
+ 206 - Đức Hòa ĐăkLăk
+ 208 - Liên Phát
+ 209 - Nam Trà Đắk Nông
+ 210 - Thu Lợi
+ 211 - Thanh An
+ 213 - An Vinh
+ 215 - Nguyên Dũng GiaLai
+ 217 - Hương Long Đắk Nông
+ 219 - Sucden
+ 220 - PHÚC THIỆN
+ 221 - INTIMEX BD
+ 222 - Intimex NT-DL
+ 230 - TÀI NGUYÊN
+ 232 - Nedcoffee BV
+ 233 - PHÚC SƯƠNG
+ 234 - MINH TIẾN
+ 235 - Bảo Ngôn
+ 239 - Gia Nguyên Đăk Nông
+ 240 - Thái Lộc Phát
+ 241 - Hiệp Thịnh
+ 242 - NGỌC THU
+ 244 - CAO NGUYÊN BAZAN
+ 247 - DUY ANH
+ 249 - INTIMEX ĐĂK MIL
+ 252 - LẬP TIẾN PHÁT
+ 255 - VT Y TẾ ĐẮK NÔNG
+
+
+###BUYERS###
+ 192 - Lanco Portugal
+   1 - Nhan Dinh
+ 194 - Mitsui
+ 195 - Fichaux
+   8 - Bá Thành
+ 136 - Nova Delta
+ 137 - Coex
+  10 - Hoàng Quyến
+ 142 - Strauss
+ 214 -
+ 216 - Finagra Group
+  93 - Quille
+  95 - Tchibo
+  96 - Blaser
+ 226 - Geprocor
+  98 - Touton
+  99 - Alois Dallmayr
+ 163 - Lanco Trading AG
+ 164 - V-G-B Trading
+ 101 - Walter Matter SA
+ 229 - Itochu
+ 166 - Hacofco
+ 167 - Kofinvest
+ 104 - Darboven
+ 168 - Westhoff
+ 232 - Nedcoffee BV
+ 174 - Icona
+  50 - Olam
+ 188 - Group Sopex
+
+
+###SHIPPERS###
+ 101 - Walter Matter SA
+ 104 - Darboven
+ 136 - Nova Delta
+ 233 - PHÚC SƯƠNG
+ 107 - SWCVN
+ 142 - Strauss
+  47 - Petec
+ 175 - MY HANH
+ 177 - CA PHE DA LAT
+ 115 - Quang Huy
+  91 - SW Commodities
+ 124 - Phúc Minh

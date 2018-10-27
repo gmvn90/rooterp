@@ -1,0 +1,38 @@
+<!-- BEGIN: body -->
+<tbody>
+    <!-- BEGIN: row -->
+    <tr id="{prefix}_{id}" class="{prefix} prow">
+        <td width="100px">{di_ref}</td>
+        <td width="150px">{supplier}</td>
+        <td width="90px">{origin}</td>
+        <td width="90px">{quality}</td>
+        <td width="240px">{grade}</td>
+        <td width="110px">{packing}</td>
+        <td width="100px" class="formatNumber">{quantity}</td>
+        <td width="100px" class="formatNumber">{delivered}</td>
+        <td width="100px" class="formatNumber">{pending}</td>
+        <td width="80px">{date}</td>
+        <td width="50px">{from}</td>
+        <td width="50px">{to}</td>
+    </tr>
+    <!-- END: row -->
+</tbody>
+<!-- END: body -->
+
+<!-- BEGIN: footer -->
+<tfoot>
+    <tr>
+        <th width="110">Total</th>
+        <th width="140"></th>
+        <th width="100"></th>
+        <th width="100"></th>
+        <th width="210"></th>
+        <th width="110"></th>
+        <th style="text-align: left" width="105" class="formatNumber">{t_quantity}</th>
+        <th style="text-align: left" width="100" class="formatNumber">{t_delivered}</th>
+        <th style="text-align: left" width="100" class="formatNumber">{t_pending}</th>
+        <th colspan="3" width="180"></th>
+    </tr>
+</tfoot>
+<!-- END: footer -->
+

@@ -1,0 +1,109 @@
+{{for categories}}
+<fieldset class="border_1_solid_black">
+    <legend class="header expand"><span class="sign"></span>{{:name}}</legend>
+    <table class="table_border_bottom_head cost_fixed_table">
+        <thead>
+            <tr>
+                <th class="space"></th>
+                <th class="space"></th>
+                <th class="space"></th>
+                <th class="option_name"></th>
+                <th class="cost_unit">Units</th>
+                <th class="value_vnd">Unit Cost VND</th>
+                <th class="value_usd">Unit Cost USD</th>
+                <th class="update_by">Authorized By</th>
+                <th class="btn_save"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{for children}}
+            <tr  class="header expand headerlv1" headerlv="1">
+                <th colspan="9" align="left"><span class="sign"></span><strong>{{:name}}</strong></th>
+            </tr>
+                {{for children}}
+                    {{if children}}
+                        <tr class="header expand headerlv2" headerlv="2">
+                            <th colspan="" align="left"><strong></strong></th>
+                            <th colspan="8" align="left"><span class="sign"></span>{{:name}}</th>
+                        </tr>
+                        {{for children}}
+                            {{if children}}
+                                <tr class="header expand headerlv3" headerlv="3">
+                                    <th colspan="" align="left"><strong></strong></th>
+                                    <th colspan="" align="left"><strong></strong></th>
+                                    <th colspan="7" align="left"><span class="sign"></span>{{:name}}</th>
+                                </tr>
+                                {{for children}}
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td align="left">{{:name}}</td>
+                                    <td>{{:option_unit}}</td>
+                                    {{if option_type == 0}}
+                                    <td><input style="text-align:right;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" disabled class="cur_vnd option_cost numberOnly"/></td>
+                                    <td><input style="text-align:right; color: blue;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" class="cur_usd option_cost numberOnly"/></td>
+                                    <td>--:{{:~convertDate(updated)}}</td>
+                                    <td><input type="button" value="Save" class="saveSingleCost" id="btnsave_{{:id}}" value_id="{{:~getUsdId(option_name,id)}}" /></td>
+                                    {{else option_type == 1}}
+                                    <td><input style="text-align:right; color: blue;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" class="cur_vnd option_cost numberOnly"/></td>
+                                    <td><input style="text-align:right;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" disabled class="cur_usd option_cost numberOnly"/></td>
+                                    <td>--:{{:~convertDate(updated)}}</td>
+                                    <td><input type="button" value="Save" class="saveSingleCost" id="btnsave_{{:id}}" value_id="{{:~getVndId(option_name,id)}}" /></td>
+                                    {{else option_type == 2}}
+                                    <td><input style="text-align:right;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" disabled class="cur_vnd option_cost numberOnly"/></td>
+                                    <td><input style="text-align:right;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" disabled class="cur_usd option_cost numberOnly"/></td>
+                                    {{/if}}
+                                </tr>
+                                {{/for}}
+                                <tr>s</tr>
+                            {{else}}
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="2" align="left">{{:name}}</td>
+                                <td>{{:option_unit}}</td>
+                                {{if option_type == 0}}
+                                <td><input style="text-align:right;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" disabled class="cur_vnd option_cost numberOnly"/></td>
+                                <td><input style="text-align:right; color: blue;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" class="cur_usd option_cost numberOnly"/></td>
+                                <td>--:{{:~convertDate(updated)}}</td>
+                                <td><input type="button" value="Save" class="saveSingleCost" id="btnsave_{{:id}}" value_id="{{:~getUsdId(option_name,id)}}" /></td>
+                                {{else option_type == 1}}
+                                <td><input style="text-align:right; color: blue;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" class="cur_vnd option_cost numberOnly"/></td>
+                                <td><input style="text-align:right;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" disabled class="cur_usd option_cost numberOnly"/></td>
+                                <td>--:{{:~convertDate(updated)}}</td>
+                                <td><input type="button" value="Save" class="saveSingleCost" id="btnsave_{{:id}}" value_id="{{:~getVndId(option_name,id)}}" /></td>
+                                {{else option_type == 2}}
+                                <td><input style="text-align:right;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" disabled class="cur_vnd option_cost numberOnly"/></td>
+                                <td><input style="text-align:right;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" disabled class="cur_usd option_cost numberOnly"/></td>
+                                {{/if}}
+                            </tr>
+                            {{/if}}
+                        {{/for}}
+                    {{else}}
+                    <tr>
+                        <td colspan="1"></td>
+                        <td colspan="3" align="left">{{:name}}</td>
+                        <td>{{:option_unit}}</td>
+                        {{if option_type == 0}}
+                        <td><input style="text-align:right;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" disabled class="cur_vnd option_cost numberOnly"/></td>
+                        <td><input style="text-align:right; color: blue;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" class="cur_usd option_cost numberOnly"/></td>
+                        <td>--:{{:~convertDate(updated)}}</td>
+                        <td><input type="button" value="Save" class="saveSingleCost" id="btnsave_{{:id}}" value_id="{{:~getUsdId(option_name,id)}}" /></td>
+                        {{else option_type == 1}}
+                        <td><input style="text-align:right; color: blue;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" class="cur_vnd option_cost numberOnly"/></td>
+                        <td><input style="text-align:right;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" disabled class="cur_usd option_cost numberOnly"/></td>
+                        <td>--:{{:~convertDate(updated)}}</td>
+                        <td><input type="button" value="Save" class="saveSingleCost" id="btnsave_{{:id}}" value_id="{{:~getVndId(option_name,id)}}" /></td>
+                        {{else option_type == 2}}
+                        <td><input style="text-align:right;" type="text" related_id="{{:~getUsdId(option_name,id)}}" id="{{:~getVndId(option_name,id)}}" name="" value="{{:value_in_vnd}}" disabled class="cur_vnd option_cost numberOnly"/></td>
+                        <td><input style="text-align:right;" type="text" related_id="{{:~getVndId(option_name,id)}}" id="{{:~getUsdId(option_name,id)}}" name="" value="{{:value_in_usd}}" disabled class="cur_usd option_cost numberOnly"/></td>
+                        {{/if}}
+                    </tr>
+                    {{/if}}
+                {{/for}}
+                {{if not children}}
+                    <tr>s</tr>
+                {{/if}}
+            {{/for}}
+        </tbody>
+    </table>
+</fieldset>
+{{/for}}

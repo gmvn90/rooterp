@@ -1,0 +1,55 @@
+<!--BEGIN: main-->
+<div class="center">
+    Choose map: <select name="map_select" id="map_select" style="width: 30%">
+        <option value=""></option>
+    </select> <br/>
+    Current area: <label id="currentArea" name="currentArea" style="font-style: italic"></label>
+</div>
+<div class="center" style="width: 850px">
+    <table class="warehousemap_editable_area" border="1">
+        <tbody id="area_map">
+
+        </tbody>
+    </table>
+</div>
+<input type="hidden" id="current" name="current" value=""/>
+<input type="hidden" id="map_id" name="map_id" value=""/>
+<input type="hidden" id="cell_id" name="cell_id" value=""/>
+
+<script>
+    $(document).ready(function() {
+        $.sendRequest({
+            action: "selection_warehouse_map",
+            status: "handle_response",
+            func: function() {
+                $("#map_select").html(msg);
+                $("#currentArea").html($("#area").val());
+                if ($("#area").val() != "") {
+                    $("#map_id").val($("#cell_id_name").val());
+                    $("#map_select").val($("#id_warehousemap").val());
+                    flag_map_name = $("#map_select :selected").text();
+                    $.sendRequest({
+                       action: "bind_map_data_area",
+                       target: "#area_map",
+                       data: {map_id:$("#id_warehousemap").val()},
+                       status: "replace_html",
+                       turnOffLayout: false
+                    });
+                    //sendRequestNotFade("weighing_form", "area_map", "bind_map_data_area");
+                }
+            },
+            turnOffLayout: false
+        });
+//        getSelectionNotFade("weighing_form", "map_select", "selection_warehouse_map", -1);
+//        $("#currentArea").html($("#area").val());
+//
+//        if ($("#area").val() != "") {
+//            $("#map_id").val($("#cell_id_name").val());
+//            $("#map_select").val($("#id_warehousemap").val());
+//            flag_map_name = $("#map_select :selected").text();
+//            sendRequestNotFade("weighing_form", "area_map", "bind_map_data_area");
+//        }
+
+    });
+</script>
+<!--END: main-->

@@ -1,0 +1,333 @@
+.topic-selector
+{
+    border-bottom: 0;
+    background: #fff url('../images/component-btm2-bg-653.gif') no-repeat left bottom;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.topic-selector .search
+{
+    padding: 7px 9px 15px 20px;
+    width: 565px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.topic-selector .search 
+{
+    width: 549px !important;
+    display: block;
+    float: left;
+}
+
+.topic-selector .searchInput 
+{
+    width: 300px;
+    height: 25px;
+    font-size: 14px;
+    padding: 5px;
+    color: #999;
+    font-size: 14px;
+    text-indent: 5px;
+    vertical-align: middle;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #d7d7d7;
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 0 none;
+    background: #fff url('../images/input-bg.gif') repeat-x 0 0;
+}
+
+
+.topic-selector .search .results
+{
+    margin-top: 20px;
+    display:block;
+    clear:both;
+    max-height:300px;
+    overflow-y: auto;    
+}
+
+.topic-selector .search .results li
+{
+    width: 525px;
+    margin-top: 3px;
+}
+
+.topic-selector .search .results a
+{
+    font-weight:normal;
+    color:#555;
+    background-color:#f2f2f2;
+    text-shadow:none;
+    cursor: default;
+    display: block;
+    padding: 0 8px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topic-selector .search .results a:hover
+{
+    cursor:pointer;
+    background:#f8f8f8;
+}
+
+.topic-selector .search .results a.selected
+{
+    font-weight:normal;
+    color:#fff;
+    background-color:#3197bc;
+    text-shadow:1px 1px 0 #525252;
+}
+
+div.browseAllTA .grid_10
+{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.head
+{
+    height: 20px;
+    position: relative;
+    top: -20px;
+    background: transparent url('../images/component-top-bg-653.gif') no-repeat left bottom;
+}
+
+.head .title
+{
+    font-weight: bold;
+    font-size: 16px;
+    color: #88ad3f;
+    position: relative;
+    text-indent: 20px;
+    text-transform: none;
+    top: -14px;
+    margin-bottom: 3px;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+
+head.topicTitle
+{
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    text-indent: 20px;
+    text-transform: none;
+    top: -14px;
+    margin-bottom: 3px;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+
+.CategorySelectorBody
+{
+    overflow: hidden;
+    padding: 15px 20px;
+    width: 920px;
+}
+
+.btns.top {
+    margin: 0;
+    position: absolute;
+    right: 30px;
+    top: -28px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;    
+}
+
+a.btn
+{
+    margin-left: 8px;
+}
+
+.btn span
+{
+    color: #555555;
+    font-weight: normal;
+    padding-left: 25px;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    display: block;
+    font-size: inherit;
+    height: 100%;
+    line-height: inherit;
+    position: relative;
+    white-space: nowrap;
+    float: left;
+}
+
+.expandAll span
+{
+    background: url("../images/sprite-ico.png") no-repeat scroll 10px -3597px transparent;
+
+}
+
+.collapseAll span {
+    background: url("../images/sprite-ico.png") no-repeat scroll 10px -3558px transparent;
+}
+.topicListExpandable
+{
+    background: url("../images/component-mid-rpt-653.gif") repeat-y scroll 0 0 #FFFFFF;
+    margin-bottom: 50px;
+    margin-top: 80px;
+    position: relative;
+    width: 600px;
+}
+
+h3.subtitle
+{
+    margin-bottom: -1px;
+    border: 1px solid #d5d5d5;
+    line-height: 29px;
+    font-size: 13px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background: #f3f3f3 url('../images/gradient-ta-expandable.png') repeat-x 0 0;
+}
+
+h3.subtitle h4
+{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #444;
+    padding-left: 0px;
+}
+
+
+.toggle
+{
+    font-weight: bold;
+    width: 7px;
+    margin-right: 5px;
+    height: 16px;
+    overflow: hidden;
+    display: inline-block;
+    background: url('../images/sprite-ico.png') no-repeat -1px -3598px;
+    position: relative;
+    top: 3px;
+    left: 0;
+}
+
+.toggle:hover
+{
+    cursor: pointer;
+}
+
+.expand
+{
+    background-position:0 -3559px;
+}
+
+ul.rootUL.subtopics
+{
+    margin-left: 0px;
+    background: #f9f9f9;
+    margin-right: 10px;
+    border-right: 1px solid #d5d5d5;
+    clear: both;
+    margin-bottom:0px;
+}
+
+ul.subtopics
+{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #d5d5d5;
+}
+
+.rootUL ul,
+.rootUL ul ul ul,
+.rootUL ul ul ul ul ul
+{
+    background: #f3f3f3;
+}
+
+.rootUL ul ul,
+.rootUL ul ul ul ul
+{
+    background: #f9f9f9;
+}
+
+
+.subtitle li
+{
+    line-height: 20px;
+}
+
+.subtitle a
+{
+    color: #222;
+}
+
+.subtitle ul
+{
+    border-left: 1px solid #d5d5d5;
+    background: #f3f3f3;
+    margin-left: 10px;
+}
+
+li div.toggle
+{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.subtitle li a
+{
+    padding: 10px;
+}
+
+.subtopic
+{
+    line-height: 20px;
+    padding-left: 10px;
+}
+
+.subtopic.last
+{
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: -1px;
+}
+
+.subtopic.first
+{
+    border-top: 1px solid #d5d5d5;
+    padding-top: 3px;
+}
+
+.subtopic a
+{
+    margin-left: 0px;
+}
+
+.accesslist
+{
+    float: right;
+    margin: 0px 30px 5px 0;
+    width: 600px;
+    border: 0;
+    background: none !important;
+}
+
+.accesslist li{
+    display: inline;
+}
+
+.accesslist li.first{
+    margin-left: 10px;
+}

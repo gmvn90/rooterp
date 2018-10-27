@@ -1,0 +1,64 @@
+<style>
+    table.warehousemap_editable_area td{
+        position: relative;
+    }
+    td.storage:hover ul.cellopts{display: block}
+    .cellopts{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9999;
+        width: 150px !important;
+        font-size: 11px !important;
+    }
+</style>
+<div class="center">
+    Choose map: <select name="map_select" id="map_select" style="width: 30%">
+        {{for warehouse}}
+        {{if selected == true}} 
+        <option value="{{:id}}" selected>{{:name}}</option>
+        {{else}}
+        <option value="{{:id}}">{{:name}}</option>
+        {{/if}}
+        {{/for}}
+    </select> <br/>
+    <!--Current area: <label id="currentArea" name="currentArea" style="font-style: italic"></label>-->
+</div>
+<div class="center" style="width: 850px">
+    <table class="warehousemap_editable_area" border="1" style="margin-left: auto; margin-right: auto; margin-top: 15px">
+        <tbody id="area_map">
+
+        </tbody>
+    </table>
+</div>
+<!--<input type="hidden" id="current" name="current" value=""/>
+<input type="hidden" id="map_id" name="map_id" value=""/>
+<input type="hidden" id="cell_id" name="cell_id" value=""/>-->
+
+<script>
+    $(document).ready(function() {
+        bindMap();
+    }).on("change", "#map_select", function() {
+        bindMap();
+    });
+    function bindMap() {
+        $.sendRequest({
+            action: "bind_map_data_area",
+            target: "#area_map",
+            data: {map_id: $("#map_select").val()},
+            status: "replace_html",
+            turnOffLayout: false,
+            functions: [
+                {name:"generateCellOpt", params: []}
+            ]
+        });
+    }
+    function generateCellOpt(){
+        var file = getAbsolutePath() + "/js/templates/area/area_options.html";
+        $.when($.get(file)).done(function(tmplData){
+            $("#area_map td.storage").append(tmplData);
+        });
+    }
+    
+</script>

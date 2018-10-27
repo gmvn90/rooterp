@@ -1,0 +1,343 @@
+<div style="width: 1000px; height: auto; overflow: hidden">
+    <div class="left" style="width: 400px;">
+        <table class="table_detail_content">
+            <tr>
+                <td class="firstcol" align="right">Weight Note Ref</td>
+                <td class="secondcol bold" align="left">{{:ref_number}}</td>
+            </tr>
+            <tr>
+                <td class="firstcol"  align="right">Date Time</td>
+                <td class="bold secondcol" align="left">{{:date}}</td>
+            </tr>
+            <tr>
+                {{if type == 'IM'}}
+                <td class="firstcol" align="right">Delivery Instruction</td>
+                {{else type == 'IP' || type == 'XP'}}
+                <td class="firstcol" align="right">Processing Instruction</td>
+                {{else type == 'EX'}}
+                <td class="firstcol" align="right">Shipping Instruction</td>
+                {{/if}}
+
+                <td class="secondcol bold" align="left">{{:inst_ref}}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Supplier</td>
+                <td class="secondcol bold" align="left">{{:supplier}}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Supplier Ref </td>
+                <td class="secondcol bold" align="left">{{:supplier_ref}}</td>
+            </tr>
+            <!--{{if type == 'IM'}}-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">Truck No</td>-->
+                <!--<td class="secondcol" align="left"><input type="text" name="truck_no" id="truck_no" value="{{:truck_no}}"/></td>-->
+            <!--</tr>-->
+            <!--{{/if}}-->
+            <!--{{if type == 'EX'}}-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">Container No</td>-->
+                <!--<td class="secondcol" align="left"><input type="text" name="container_no" id="container_no" value="{{:container_no}}"/></td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">ICO No</td>-->
+                <!--<td class="secondcol" align="left"><input type="text" name="ico_no" id="ico_no" value="{{:ico_no}}"/></td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">Seal No</td>-->
+                <!--<td class="secondcol" align="left"><input type="text" name="seal_no" id="seal_no" value="{{:seal_no}}"/></td>-->
+            <!--</tr>-->
+            <!--{{/if}}-->
+        </table>
+    </div>
+    <div class="right" style="width: 400px;">
+        <table class="table_detail_content">
+            <tr>
+                <td class="firstcol" align="right">Quality Ref</td>
+                <td class="secondcol bold" align="left">{{:qr}}</td>
+            </tr>
+            <!--<tr>-->
+                <!--<td class="firstcol"  align="right">Origin</td>-->
+                <!--<td class="bold secondcol" align="left">Vietnam</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">Quality</td>-->
+                <!--<td class="secondcol bold" align="left">Robusta</td>-->
+            <!--</tr>-->
+            <tr>
+                <td class="firstcol" align="right">Grade</td>
+                <td class="secondcol bold" align="left">
+                    <select id="grade" name="grade" style="width: 200px">
+                        <option value="-1"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Packing</td>
+                <td class="secondcol bold" align="left">
+                    <select id="packing" name="packing" style="width: 200px">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <!--{{if type == 'IM' || type == 'XP'}}-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">Driver</td>-->
+                <!--<td class="secondcol" align="left"><input type="text" name="driver_name" id="driver_name" value="{{:driver}}"/></td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td class="firstcol" align="right">Area</td>-->
+                <!--<td class="secondcol" align="left">-->
+                    <!--<input type="text" name="area" id="area" value="{{:area_str}}" readonly=""/>-->
+                    <!--<input type="button" name="saveArea" id="saveArea" value="save"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--{{/if}}-->
+        </table>
+    </div>
+</div>
+{{if type == 'IM' || type == 'XP'}}
+<table class="cuteBorder" border="1" style="font-size: 13px; margin-top: 25px; margin-left: 5px">
+    <thead>
+        <tr>
+            <th id="wnr_packing_head">Packing</th>
+            <!--<th id="wnr_bags_head">No of bags</th>-->
+            <!--<th id="wnr_pallet_head">Pallet ID</th>-->
+            <th id="gross_text">Gross weight</th>
+            <!--{{if type == 'IM'}}-->
+            <!--<th colspan="3">Truck Mode</th>-->
+            <!--{{/if}}-->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="wnr_pack_column"><select style="width: 150px" name="wnr_packing" id="wnr_packing">
+                </select></td>
+            <!--<td id="wnr_bags_column"><input type="text" name="wnr_noOfBag" id="wnr_noOfBag" class="numberOnly" style="width: 100px !important"/></td>-->
+            <!--<td id="wnr_pallet_column"><input type="text" name="wnr_palletId" id="wnr_palletId" style="width: 150px !important"/></td>-->
+            <td><input type="text" name="wnr_gross" id="wnr_gross" style="width: 150px !important"/></td>
+            {{if type == 'IM'}}
+            <!--<td class="textAlignCenter">-->
+                <!--<label><b>None</b></label>-->
+                <!--<input type="radio" name="truck_mode" id="truck_mode_none" value="0"/>-->
+            <!--</td>-->
+            <!--<td class="textAlignCenter">-->
+                <!--<label><b>Gross</b></label>-->
+                <!--<input type="radio" name="truck_mode" id="truck_mode_gross" value="1"/>-->
+            <!--</td>-->
+            <!--<td class="textAlignCenter">-->
+                <!--<label><b>Tare</b></label>-->
+                <!--<input type="radio" name="truck_mode" id="truck_mode_tare" value="2"/>-->
+            <!--</td>-->
+            {{/if}}
+            <td class="textAlignCenter"><input type="button" id="btnNewWNR" value="Add" style="margin-right: 244px" name="perm_51"/></td>
+        </tr>
+    </tbody>
+</table>
+{{/if}}
+{{if type == 'IP'}}
+<table class="cuteBorder" border="1" style="font-size: 13px; margin-top: 25px; margin-left: 5px">
+    <thead>
+        <tr>
+            <th id="wnr_text">WNR</th>
+            <th id="gross_text">Gross weight</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" name="allocated_wnr_id" id="allocated_wnr_id" style="width: 150px !important"/></td>
+            <td><input type="text" name="wnr_gross" id="wnr_gross" style="width: 150px !important"/></td>
+            <td class="textAlignCenter"><input type="button" id="btnNewWNR" value="Add" style="margin-right: 244px"/></td>
+        </tr>
+    </tbody>
+</table>
+{{/if}}
+{{if type == 'EX'}}
+<table class="cuteBorder" border="1" style="font-size: 13px; margin-top: 25px; margin-left: 5px">
+    <thead>
+        <tr>
+            <th id="wnr_text">WNR</th>
+            <th id="gross_text">Gross weight</th>
+            <!--<th colspan="3">Truck Mode</th>-->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" name="allocated_wnr_id" id="allocated_wnr_id" style="width: 150px !important"/></td>
+            <td><input type="text" name="wnr_gross" id="wnr_gross" style="width: 150px !important"/></td>
+            <!--<td class="textAlignCenter">-->
+                <!--<label><b>None</b></label>-->
+                <!--<input type="radio" name="truck_mode" id="truck_mode_none" value="0"/>-->
+            <!--</td>-->
+            <!--<td class="textAlignCenter">-->
+                <!--<label><b>Gross</b></label>-->
+                <!--<input type="radio" name="truck_mode" id="truck_mode_gross" value="1"/>-->
+            <!--</td>-->
+            <!--<td class="textAlignCenter">-->
+                <!--<label><b>Tare</b></label>-->
+                <!--<input type="radio" name="truck_mode" id="truck_mode_tare" value="2"/>-->
+            <!--</td>-->
+            <td class="textAlignCenter"><input type="button" id="btnNewWNR" value="Add" style="margin-right: 244px"/></td>
+        </tr>
+    </tbody>
+</table>
+{{/if}}
+<!--&lt;!&ndash;<input type="hidden" name="inst_id" id="inst_id" value=""/>&ndash;&gt;-->
+<!--<input type="hidden" name="id_warehousecell" id="id_warehousecell" value="{{:area}}"/>-->
+<!--<input type="hidden" name="id_warehousemap" id="id_warehousemap" value="{{:map}}"/>-->
+<div id="wnr_content">
+
+    <table class="cuteBorder" border="1" style="margin-top: 25px; margin-left: 5px; font-size: 13px">
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">WNR Ref</th>
+                <th rowspan="2">Date</th>
+                <th rowspan="2">Packing</th>
+                <th rowspan="2">Num</th>
+
+                <!--{{if type == 'IM' || type == 'XP'}}-->
+                <!--<th rowspan="2">Pallet</th>-->
+                <!--{{/if}}-->
+
+                {{if type == 'IM' || type == 'XP'}}
+                <th colspan="4">Kgs</th>
+                <th rowspan="2"></th>
+                {{else}}
+                <th colspan="4">Kgs</th>
+                {{/if}}
+                <th rowspan="2"></th>
+                {{if sav == 1}}
+                <th rowspan="2"></th>
+                {{/if}}
+
+                {{if del == 1}}
+                <th rowspan="2"></th>
+                {{/if}}
+            </tr>
+            <tr>
+                <th>Bags</th>
+
+                <!--{{if type == 'IM' || type == 'XP'}}-->
+                <!--<th>Pallet</th>-->
+                <!--{{/if}}-->
+
+                <th>Gross</th>
+                <th>Tare</th>
+                <th>Net</th>
+            </tr>
+        </thead>
+        <tbody id="weighing_section">
+            {{for wnrs}}
+            <tr id="wnr_row_{{:id}}">
+                <th>{{:no}}</th>
+                <td><input type="text" style="width: 125px" readonly="" value="{{:ref_number}}"/><a class="mpcth-icon-{{:status}}" href="javascript:void(0)" style="text-decoration: none; "></a></td>
+                <td><input class="textAlignCenter" value="{{:date}}" style="width: 80px" readonly=""/></td>
+                <td><select style="width: 120px" class='wnr_packing' id="wnr_packing_{{:id}}" vl="{{:packing}}">
+                    </select></td>
+                <td><input type="text" id="wnr_noOfBag_{{:id}}" class="noOfBag" style="width: 40px" value="{{:bags}}" {{:read_only}}/></td>
+                <!--{{if type == 'IM' || type == 'XP'}}-->
+                <!--<td><input type="text" id="wnr_pallet_{{:id}}" value="{{:pallet}}" style="width: 150px"  {{:read_only}}/></td>-->
+                <!--{{/if}}-->
+                <td><input type="text" id="wnr_kgPerBag_{{:id}}" class="bag_weight" style="width: 48px" value="{{:kgPerBag}}" {{:read_only}}/></td>
+                <!--{{if type == 'IM' || type == 'XP'}}-->
+                <!--<td><input type="text" id="wnr_pallet_weight_{{:id}}" class="pallet" value="{{:pallet_weight}}" style="width: 70px"  {{:read_only}}/></td>-->
+                <!--{{/if}}-->
+                <td><input type="text" id="wnr_gross_{{:id}}" class="gross" style="width: 70px" value="{{:gross}}" {{:read_only}}/></td>
+                <td><input type="text" id="wnr_tare_{{:id}}" class="tare" style="width: 70px" value="{{:tare}}" {{:read_only}}/></td>
+                <td><input type="text" id="wnr_net_{{:id}}" class="net" style="width: 70px" value="{{:net}}" {{:read_only}}/></td>
+
+
+                <td><input type="button" class="wnr_print" id="print_wnr_{{:id}}" value="Print"/></td>
+
+
+                {{if sav == 1}}
+                <td><input type="button" class="wnr_save" value="Save"/></td>
+                {{/if}}
+                {{if del == 1}}
+                <td><input type="button" class="wnr_delete" value="Del"/></td>
+                {{/if}}
+            </tr>
+            {{/for}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th width="150px"></th>
+                <th width="80px"></th>
+                <th width="120px"></th>
+                <th><input type="text" id="total_bags" style="width: 40px" readonly="" value="{{:total.quantity}}"/></th>
+                <!--{{if type == 'IM' || type == 'XP'}}-->
+                <!--<th width="150px"></th>-->
+                <!--{{/if}}-->
+                <th><input type="text" id="total_bags_weight" style="width: 48px" readonly="" value="{{:total.total_bags_weight}}"/></th>
+                <!--{{if type == 'IM' || type == 'XP'}}-->
+                <!--<th><input type="text" id="total_pallet" style="width: 70px" readonly="" value="{{:total.pallet}}"/></th>-->
+                <!--{{/if}}-->
+                <th><input type="text" id="total_gross" style="width: 70px" readonly="" value="{{:total.gross}}"/></th>
+                <th><input type="text" id="total_tare" style="width: 70px" readonly="" value="{{:total.tare}}"/></th>
+                <th><input type="text" id="total_net" style="width: 70px" readonly="" value="{{:total.net}}"/></th>
+                <th border="0"></th>
+                {{if sav == 1}}
+                <th border='0'></th>
+                {{/if}}
+                {{if del == 1}}
+                <th border='0'></th>
+                {{/if}}
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+<div style="margin-left: 100px; margin-top: 10px">
+    <label>Completed</label>
+    {{if status == '0'}}
+    <input type="checkbox" value="{{:status}}" id="wn_status" name="wn_status"/>
+    {{else status == '1'}}
+    <input type="checkbox" value="{{:status}}" id="wn_status" name="wn_status" checked/>
+    {{/if}}
+
+</div>
+<script>
+    var opt = {all: true};
+    $(document).ready(function() {
+        $(".wnr_packing").each(function() {
+            getPackingOption({
+                target: "#" + $(this).attr("id"),
+                value: $(this).attr("vl")
+            });
+        });
+        if ($("#grade").length > 0) {
+            var wn_type = '{{:type}}';
+            switch (wn_type) {
+                case "IM":generateSelection("#grade", "GradeMaster", "{{:grade}}", {type: "select"});break;
+                case "IP":{
+                $.sendRequest({
+                    action: "gradeInAllocate",
+                    data: {id: '{{:inst_id}}'}
+                },function(msg){
+                    var data = JSON.parse(msg);
+                    $.data(document.body,"AllocatedGradeMaster",data.select);
+                    generateSelection("#grade", "AllocatedGradeMaster", "{{:grade}}", {type: "select"});
+                    return true;
+                });
+                
+                };break;
+                case "XP":generateSelection("#grade", "GradeMaster", '{{:grade}}',{type: "select"});break;
+                case "EX":generateSelection("#grade", "GradeMaster", "{{:grade}}",{type: "select"});break;
+//                case "M":generateSelection("#grade", "MGradeMaster", "{{:grade}}", {action: "gradeInMov", type: "select"});break;
+            }
+            
+        }
+        if ($("#packing").length > 0) {
+            generateSelection("#packing", "PackingMaster", '{{:packing}}', {type: "select"});
+        }
+        if ($("#wnr_packing").length > 0) {
+            generateSelection("#wnr_packing", "PackingMaster", '{{:packing}}', {type: "select"});
+        }
+//        $("#cell_id_name").val('{{:area}}');
+    });
+</script>

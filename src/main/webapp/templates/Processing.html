@@ -1,0 +1,228 @@
+<!-- BEGIN: main -->
+<div class="pc60 left cell">
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Processing Ref</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 97%" id="ref_number" name="ref_number" value="{ref_number}" readonly=""/>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Client</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="client" id="client" style="width: 100%">
+                <option value="-1"></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Client Ref</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 97%" name="client_ref" value="{client_ref}" />
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Type</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="processing_type" id="processing_type" style="width: 100%">
+                <option value="-1"></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Date</span>
+        </div>
+        <div class="pc50 left cell">
+            <span {date_class}>{created_date}</span>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Origin</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="origin" style="width: 100%">
+                <option value="1" selected>VietNam</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Quality</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="quality" id="quality" style="width: 100%">
+                <option value="1" selected>Robusta</option>
+                <option value="2">Arabica</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Grade</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="grade" id="grade" style="width: 100%">
+                <option value="-1"></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Packing</span>
+        </div>
+        <div class="pc50 left cell">
+            <select name="packing" id="packing" style="width: 100%">
+                <option value="-1"></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Quantity</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 50%" name="quantities" value="{tons}" /> Mts
+        </div>
+    </div>
+    <div class="pc100" style="margin-top: 20px">
+        <div class="pc40 left cell">
+            <span class="right label"></span>
+        </div>
+        <div class="pc50 left cell">
+            <span>From Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Time</span>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Processing Period</span>
+        </div>
+        <div class="pc50 left cell">
+            <input type="text" style="width: 30%" class="date_picker_text" name="txtFrom" value="{from_date}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" style="width: 30%" class="date_picker_text" name="txtTo" value="{to_date}" />
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Remark</span>
+        </div>
+        <div class="pc50 left cell">
+            <textarea name="remark" style="width: 530px; height: 50px">{remark}</textarea>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell"  style='margin-top: 25px'>
+            <span class="right label">Completed</span>
+        </div>
+        <div class="pc50 left cell"  style='margin-top: 25px'>
+            <input type="checkbox" name="completed"  id="pi_status" value="{status_value}" {checked}/>
+        </div>
+    </div>
+    <div class="pc100" style='margin-top: 10px'>
+        <div class="pc40 left cell">
+            <span class="right label">Last Updated By</span>
+        </div>
+        <div class="pc50 left cell">
+            {username}
+        </div>
+    </div>
+</div>
+<div class="pc40 right cell">
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Allocated</span>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">
+                <label id="allocated">{allocated}</label>Mts
+            </span>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">In-Process</span>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">
+                <label id="in_process">{in_process}</label>Mts
+            </span>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Ex-Process</span>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">
+                <label id="ex_process">{ex_process}</label>Mts
+            </span>
+        </div>
+    </div>
+
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">Pending</span>
+        </div>
+    </div>
+    <div class="pc100">
+        <div class="pc40 left cell">
+            <span class="right label">
+                <label id="pending">{pending}</label>Mts
+            </span>
+        </div>
+    </div>
+    <div id="weight_loss_container" style="{weight_loss_stt}">
+        <div class="pc100">
+            <div class="cell center">
+                <span class="left label">______________________________________________</span>
+            </div>
+        </div>
+
+        <div class="pc100">
+            <div class="pc40 left cell">
+                <span class="right label">Weight Loss</span>
+            </div>
+        </div>
+        <div class="pc100">
+            <div class="pc40 left cell">
+                <span class="right label">
+                <label name="weight_loss" id="weight_loss">{weight_loss}</label>Mts
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        getSelection("processing_form", "grade", "selection_grade", '{grade_id}');
+        getSelection("processing_form", "client", "selection_company", '{client_id}');
+        getSelection("processing_form", "packing", "selection_packing", '{packing_id}');
+        getSelection("processing_form", "processing_type", "selection_processing", '{processing_type_id}');
+        getCurrentDateTimeText(".current_date_time");
+    });
+</script>
+<!-- END:main -->

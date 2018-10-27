@@ -1,0 +1,84 @@
+{{if pledge == true || client == true || area == true}}
+<tbody>
+    <tr class="sHead">
+        <td width="15px">All</td>
+        <td width="35px"></td>
+        {{if client == true}}
+        <td width="70px">client</td>
+        {{/if}}
+        {{if pledge == true}}
+        <td width="70px">pledge</td>
+        {{/if}}
+        {{if area == true}}
+        <td class="sWidth60">Area</td>
+        {{/if}}
+        <td width="110px"></td>
+        <td width="125px"></td>
+        <td width="80px"></td>
+        <td width="40px"></td>
+        <td width="100px"></td>
+        <td width="80px"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+    </tr>
+    <tr class="sHead notborder">
+        <td width="25px"><input type="checkbox" id="checkAll"/></td>
+        <td width="35px"></td>
+        {{if client == true}}
+        <td width="70px">
+            <select id="update_client"></select>
+        </td>
+        {{/if}}
+        {{if pledge == true}}
+        <td width="70px"><select id="update_pledge"></select></td>
+        {{/if}}
+        {{if area == true}}
+        <td width="100px"><input type="text" id="areaCode" readonly="" style="width: 60px"/><a href="javascript:void(0);" class="clear_text">clear</a></td>
+        {{/if}}
+        <td width="110px">
+            <input type="button" class="btnSaveChange hid" style="float: left; margin-left: 20px;" value="Save"/>
+        </td>
+        <td width="125px"></td>
+        <td width="80px">{{if area == true}}<input type="hidden" id="area"/>{{/if}}</td>
+        <td width="40px"></td>
+        <td width="100px"></td>
+        <td width="80px"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+        <td class="sWidth60"></td>
+    </tr>
+</tbody>
+{{/if}}

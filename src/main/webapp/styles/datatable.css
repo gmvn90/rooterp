@@ -1,0 +1,24 @@
+div#myTable_filter
+{
+
+    float: left;
+    margin-bottom: 10px;
+}
+
+div#myTable_filter label {float: right; margin-bottom: 10px}
+
+div#myTable_length { width: 200px; float: left }
+
+#myTable {clear: both}
+
+.paginate_enabled_previous, .paginate_enabled_next, .paginate_button { cursor: pointer }
+
+.paginate_enabled_previous:hover, .paginate_enabled_next:hover, paginate_button:hover {color:#2c7c91;}
+
+div#myTable_paginate {margin-top: 10px}
+
+div#myTable_paginate > a {padding-right: 15px;}
+
+.paginate_button, .paginate_active {padding-right: 15px;}
+
+

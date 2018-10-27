@@ -1,0 +1,60 @@
+mvn install:install-file -Dfile=lib/local/jtpl-2.0.jar -DgroupId=mill.groupId -DartifactId=net.jtpl -Dversion=2.0 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile=lib/local/client-1.0-SNAPSHOT-jar-with-dependencies.jar -DgroupId=com.hqm -DartifactId=client -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
+mysql -uroot -e"SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
+
+create fileUploads foler
+create currency
+-Djava.security.egd=file:/dev/./urandom
+Replacing securerandom.source=file:/dev/urandom with securerandom.source=file:/dev/./urandom in $JAVA_PATH/jre/lib/security/java.security has solved my problem.
+
+delete from company_master where id = 207;
+alter table company_master add unique index (name);
+
+update delivery_instruction di set deliverd = (select sum(gross_weight - tare_weight) / 1000 from weight_note_receipt where wn_id in (select id from weight_note where delivery_instruction_id=di.id and status != 2) and status != 2);
+
+link recursive error: http://localhost:8190/mill3/shipping-v2.htm?id=2157#/si-2157 -- update by delete jackson recursive on sample sent
+
+alter table user add unique(user_name);
+alter table delivery_instruction add unique(ref_number);
+alter table shipping_instruction add unique(ref_number);
+alter table processing_instruction add unique(ref_number);
+
+//As Ben Blank said, there are only three characters that need to be escaped in the replacement string 
+(escapes themselves, forward slash for end of statement and & for replace all): /\&
+
+//new File("/path/directory").mkdirs();
+SHOW OPEN TABLES WHERE `Table` LIKE '%[TABLE_NAME]%' AND `Database` LIKE '[DBNAME]' AND In_use > 0;
+
+update menu set is_default = `default`, _order = `order`, showInMainMenu=true;
+alter table menu modify column `order` tinyint(4) default 100;
+alter table menu modify column `default` bit(1) default 0;
+insert into packing_category(id, packing_id) value(13, 3), (14, 2), (15, 1), (16, 4);
+
+	
+DELIMITER //
+CREATE TRIGGER after_wnr_update 
+    AFTER UPDATE ON weight_note_receipt
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO wnr_changes
+    SET ref_number = NEW.ref_number;
+END; //
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER after_wnr_insert 
+    AFTER INSERT ON weight_note_receipt
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO wnr_changes
+    SET ref_number = NEW.ref_number;
+END; //
+DELIMITER ;
+
+//wnr_allocation
+//wn
+//wnr
+
+
+
+insert into sample_type(typeSampleRef, approvalStatus, buyerRef, clientRef, cost, createdDate, etaDate, lotRef, refNumber, remark, saveApprovalStatusDate, saveRemarkDate, saveSendingStatusDate, sendingStatus, sentDate, shipperRef, supplierRef, trackingNo, updatedDate, userRemark, buyer_id, client_id, courier_id, grade_id, origin_id, quality_id, saveApprovalStatusUser_id, saveRemarkUser_id, saveSendingStatusUser_id, shipper_id, supplier_id, user_id) select typeSampleRef, approval_status, buyerRef, clientRef, cost, created_date, eta_date, lotRef, ref_number, remark, save_approval_date, saveRemarkDate, save_sending_date, sending_status, sent_date, shipperRef, supplierRef, tracking_no, updated_date, user_remark, buyer, client, courier, grade, origin, quality, save_approval_user, saveRemarkUser_id, save_sending_user, shipper, supplier, user_id from sample_sent where `type` = 2;

@@ -1,0 +1,55 @@
+<!--BEGIN: main-->
+<input type="button" id="btn_save" value="Save" style="left: 750px; top: -10px"/>
+<table class="warehousemap_editable" border="1">
+    <tbody>
+        <!--BEGIN: row-->
+        <tr>
+            <!--BEGIN: col-->
+            <td id="{id}" available="{available}" ordinate="{ordinate}" class="{classname}">
+                {total}
+                <div>{label}</div>
+                <div class="listCell" id="{id}_list" style=""></div>
+            </td>
+            <!--END: col-->
+        </tr>
+        <!--END: row-->
+    </tbody>
+</table>
+<input type="hidden" id="current" name="current" value=""/>
+<input type="hidden" id="map_id" name="map_id" value=""/>
+<input type="hidden" id="strJSON" name="strJSON" value=""/>
+
+<script>
+    var flag;
+    var cellsChangesJson = {}
+    $(document).on("click", "table.warehousemap_editable td", function() {
+        if ($(this).attr("available") === "") {
+            $("table.warehousemap_editable td.chosen div.listCell").html("");
+            
+        } else {
+            $("table.warehousemap_editable td.chosen div.listCell").html("");
+            $("table.warehousemap_editable td.chosen").toggleClass("chosen");
+            $("#current").val($(this).attr("class"));
+            $(this).addClass("chosen");
+            sendRequestNotFade("stock_form", $(this).attr("id") + "_list", "get_list_cell_type");
+            flag = $(this).attr("id");
+        }
+
+
+    }).on("click", "ul.listCellType li", function(e) {
+        e.stopPropagation();
+        cellsChangesJson[flag] = $(this).attr("type");
+        //console.log(cellsChangesJson);
+        $(this).attr("class", "item chosen");
+
+        $("table.warehousemap_editable td.chosen").attr("class", $("ul.listCellType li.chosen div").attr("class") + " chosen");
+        $("table.warehousemap_editable td.chosen div.listCell").html("");
+        $("table.warehousemap_editable td.chosen").toggleClass("chosen");
+    });
+//            on("click", "#btn_save", function() {
+//        $("#map_id").val(flag_map_id);
+//        $("#strJSON").val(JSON.stringify(cellsChangesJson));
+//        sendRequestHtmlWithoutAuth("stock_form", "drawcell", "apply_cell_changes");
+//    });
+</script>
+<!--END: main-->

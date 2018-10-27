@@ -1,0 +1,755 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            table.sIP {margin-left: 30px; margin-top: 30px}
+            table td{padding: 0; margin: 0}
+            div#ip_section, .sStorage {width: 1780px}
+            .sHead td {
+                font-weight: bold;
+                border-bottom: 2px solid black;
+                font-size: 13px;
+            }
+            .sBody td, .sTotal td {
+                font-size: 11px;
+            }
+            .sTitle:first-child td {border-top: none}
+            .sFoot td{
+                padding: 5px 0 5px 20px;
+                background: #EEE !important;
+                font-weight: bold;  
+                font-size: 13px;
+            }
+            .sTitle td{
+                padding-left: 20px;
+                background: grey;
+                color: white;
+                border: 1px solid black;
+                font-size: 13px;
+            }
+            .sTotal td:first-child {padding-left: 20px}
+            .sTotal:last-child td {padding-bottom: 15px;}
+            .sTotal td{
+                padding-bottom: 25px;
+                font-weight: bold;
+                border-top: 1px solid black;
+            }
+            .sIP{float: left}
+            table.sIP, table.sStorage, .sHead td, .sIP td {border-collapse: collapse}
+            .sWidth60 {width: 60px}
+            div#ip_section {position: relative; height: auto; overflow: hidden}
+            table.sSummarize {float: left; margin-top: 30px; margin-left: 80px;}
+            table.sSummarize td:nth-child(2){text-align: center !important}
+        </style>
+    </head>
+    <body>
+        <table class="sStorage">
+            <tbody>
+                <tr class="sHead">
+                    <td width="35px">No</td>
+                    <td width="70px">client</td>
+                    <td width="110px">Allocation Ref.</td>
+                    <td width="125px">WN Ref.</td>
+                    <td width="80px">Tons</td>
+                    <td width="40px">Num</td>
+                    <td width="100px">Packing</td>
+                    <td width="80px">In Date</td>
+                    <td class="sWidth60">Area</td>
+                    <td class="sWidth60">Blacks</td>
+                    <td class="sWidth60">Brown</td>
+                    <td class="sWidth60">FM</td>
+                    <td class="sWidth60">Broken</td>
+                    <td class="sWidth60">Moist.</td>
+                    <td class="sWidth60">O.Crop</td>
+                    <td class="sWidth60">Moldy</td>
+                    <td class="sWidth60">Cup</td>
+                    <td class="sWidth60">SC 20+</td>
+                    <td class="sWidth60">SC 20</td>
+                    <td class="sWidth60">SC 19</td>
+                    <td class="sWidth60">SC 18</td>
+                    <td class="sWidth60">SC 17</td>
+                    <td class="sWidth60">SC 16</td>
+                    <td class="sWidth60">SC 15</td>
+                    <td class="sWidth60">SC 14</td>
+                    <td class="sWidth60">SC 13</td>
+                    <td class="sWidth60">SC 12</td>
+                    <td class="sWidth60">SC 12-</td>
+                </tr>
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td colspan="28">0 Grade > Screen 10</td> 
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sTotal">
+                    <td colspan="4">Total 0 Grade > Screen 10</td>
+                    <td width="80px">100000.000</td>
+                    <td colspan="4"></td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <!-- Group: End -->
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td colspan="28">0 Grade > Screen 10</td> 
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sTotal">
+                    <td colspan="4">Total 0 Grade > Screen 10</td>
+                    <td width="80px">100000.000</td>
+                    <td colspan="4"></td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <!-- Group: End -->
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td colspan="28">0 Grade > Screen 10</td> 
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sTotal">
+                    <td colspan="4">Total 0 Grade > Screen 10</td>
+                    <td width="80px">100000.000</td>
+                    <td colspan="4"></td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <!-- Group: End -->
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td colspan="28">0 Grade > Screen 10</td> 
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sBody">
+                    <td width="35px">1</td>
+                    <td width="70px">SWCVN</td>
+                    <td width="110px">SI-13-00001</td>
+                    <td width="125px">WN-XP-13-00001</td>
+                    <td width="80px">20.545</td>
+                    <td width="40px">100</td>
+                    <td width="100px">PP Bag</td>
+                    <td width="80px">08-Nov-13</td>
+                    <td class="sWidth60">W1-A1</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <tr class="sTotal">
+                    <td colspan="4">Total 0 Grade > Screen 10</td>
+                    <td width="80px">100000.000</td>
+                    <td colspan="4"></td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00.</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">90.00</td>
+                    <td class="sWidth60">0/5</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                    <td class="sWidth60">100.00</td>
+                </tr>
+                <!-- Group: End -->
+            </tbody>
+        </table>
+        <table class="sStorage">
+            <tr class="sFoot">
+                <td width="321px">Total Storage</td>
+                <td width="80px">100000.000</td>
+                <td colspan="4"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+                <td class="sWidth60"></td>
+            </tr>
+        </table>
+
+        <div id="ip_section">
+            <table class="sIP">
+                <tr class="sHead">
+                    <td width="110px">In-Process</td>
+                    <td width="300px">Client</td>
+                    <td width="80px">Tons</td>
+                </tr>
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td width="110px">PI-13-00010</td>
+                    <td colspan="2">SWCVN</td>
+                </tr>
+                <tr class="sBody">
+                    <td style="text-align: right">Inprocess</td>
+                    <td></td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td style="text-align: right">Exprocess</td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sTotal">
+                    <td>Total PI-13-00010</td>
+                    <td></td>
+                    <td>100.000</td>
+                </tr>
+                <!-- Group: end -->
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td width="110px">PI-13-00010</td>
+                    <td colspan="2">SWCVN</td>
+                </tr>
+                <tr class="sBody">
+                    <td style="text-align: right">Inprocess</td>
+                    <td></td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td style="text-align: right">Exprocess</td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sTotal">
+                    <td>Total PI-13-00010</td>
+                    <td></td>
+                    <td>100.000</td>
+                </tr>
+                <!-- Group: end -->
+                <!-- Group -->
+                <tr class="sTitle">
+                    <td width="110px">PI-13-00010</td>
+                    <td colspan="2">SWCVN</td>
+                </tr>
+                <tr class="sBody">
+                    <td style="text-align: right">Inprocess</td>
+                    <td></td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td style="text-align: right">Exprocess</td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td></td>
+                    <td>3 Grade, 12 Screen,  25% BB, 3% FM, 12.5% M, 1% Ex</td>
+                    <td>100.000</td>
+                </tr>
+                <tr class="sTotal">
+                    <td>Total PI-13-00010</td>
+                    <td></td>
+                    <td>100.000</td>
+                </tr>
+                <!-- Group: end -->
+                <tr class="sFoot">
+                    <td>Total In-process</td>
+                    <td></td>
+                    <td style="padding-left: 0">100.000</td>
+                </tr>
+            </table>
+            <table class="sSummarize">
+                <tr class="sBody">
+                    <td width="100px" style=" font-size: 12px !important">Total Storage</td>
+                    <td width="80px" style=" font-size: 12px !important">100.000</td>
+                </tr>
+                <tr class="sBody">
+                    <td style=" font-size: 12px !important">Total In-process</td>
+                    <td style=" font-size: 12px !important">100.000</td>
+                </tr>
+                <tr class="sFoot">
+                    <td style="text-align: left; padding-left: 0">Total Storage</td>
+                    <td style="text-align: center; padding-left: 0">100.000</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

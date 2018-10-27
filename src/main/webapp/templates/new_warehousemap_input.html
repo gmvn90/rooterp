@@ -1,0 +1,38 @@
+<!-- BEGIN: main -->
+<table class="center">
+    <tr>
+        <td class="right">Name of map: </td>
+        <td><input type="text" class="" name="new_map_name" id="new_map_name"/></td>
+    </tr>
+    <tr>
+        <td class="right">Number of columns: </td>
+        <td><input type="text" class="numberOnly" name="col_input" id="col_input"/></td>
+    </tr>
+    <tr>
+        <td class="right">Number of rows: </td>
+        <td><input type="text" class="numberOnly" name="row_input" id="row_input"/></td>
+    </tr>
+    <tr>
+        <td class="right">Vertical wall point (separate by comma): </td>
+        <td><input type="text" class="" name="wallpoint_ver_input" id="wallpoint_ver_input"/></td>
+    </tr>
+    <tr>
+        <td class="right">Horizontal wall point (separate by comma): </td>
+        <td><input type="text" class="" name="wallpoint_hor_input" id="wallpoint_hor_input"/></td>
+    </tr>
+</table>
+<div style="margin-top: 10px">
+    <input type="button" id="reset" value="Reset" style="margin-left: 390px"/>
+    <input class="center" type="button" id="submit_creating" value="Create"/>
+</div>
+
+
+<script>
+    $(document).on("click", "#reset", function() {
+        $("#col_input").val("");
+        $("#row_input").val("");
+        $("#wallpoint_ver_input").val("");
+        $("#wallpoint_hor_input").val("");
+    });
+</script>
+<!-- END: main -->

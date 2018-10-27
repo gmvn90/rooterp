@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+	<schema-selection match-catalog="wsmill3" />
+	<table-filter match-name="user" />
+	<table-filter match-name="processing_instruction" />
+	<table-filter match-name="authorization" />
+	<table-filter match-name="country" />
+	<table-filter match-name="grade_master" />
+	<table-filter match-name="page" />
+	<table-filter match-name="packing_master" />
+	<table-filter match-name="warehouse" />
+	<table-filter match-name="processing_type" />
+	<table-filter match-name="city" />
+	<table-filter match-name="weight_note_receipt" />
+	<table-filter match-name="menu" />
+	<table-filter match-name="company_master" />
+	<table-filter match-name="delivery_instruction" />
+	<table-filter match-name="weight_note" />
+</hibernate-reverse-engineering>

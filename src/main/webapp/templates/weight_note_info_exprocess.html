@@ -1,0 +1,111 @@
+<!-- BEGIN: main -->
+<div style="width: 1000px; height: auto; overflow: hidden">
+    <div class="left" style="width: 400px;">
+        <table class="table_detail_content">
+            <tr>
+                <td class="firstcol" align="right">Weight Note Ref</td>
+                <td class="secondcol bold" align="left">{ref_number}</td>
+            </tr>
+            <tr>
+                <td class="firstcol"  align="right">Date Time</td>
+                <td class="bold secondcol" align="left">{wn_dateTime}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">{ins_ref_name}</td>
+                <td class="secondcol bold" align="left">{ins_ref_number}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Supplier</td>
+                <td class="secondcol bold" align="left">{supplier}</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Supplier Ref </td>
+                <td class="secondcol bold" align="left">{supplier_ref}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="right" style="width: 400px;">
+        <table class="table_detail_content">
+            <tr>
+                <td class="firstcol" align="right">Quality Ref</td>
+                <td class="secondcol bold" align="left">{quality_ref}</td>
+            </tr>
+            <tr>
+                <td class="firstcol"  align="right">Origin</td>
+                <td class="bold secondcol" align="left">Vietnam</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Quality</td>
+                <td class="secondcol bold" align="left">Robusta</td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Grade</td>
+                <td class="secondcol bold" align="left">
+                    <select id="grade" name="grade" style="width: 200px">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Packing</td>
+                <td class="secondcol bold" align="left">
+                    <select id="packing" name="packing" style="width: 200px">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="firstcol" align="right">Area</td>
+                <td class="secondcol" align="left"><input type="text" name="area" id="area" value="{area}" readonly=""/></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<table class="cuteBorder" border="1" style="font-size: 13px; margin-top: 25px; margin-left: 5px">
+    <thead>
+        <tr>
+            <th>WNR Packing</th>
+            <th>No of bags</th>
+            <th>Pallet ID</th>
+            <th>Gross weight</th>
+            <th>Show</th>
+            <th>Save</th>
+            <th>Print</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><select style="width: 150px" name="wnr_packing" id="wnr_packing">
+                    <option>PP Bag</option>
+                    <option>T Bag</option>
+                </select></td>
+            <td><input type="text" name="wnr_noOfBag" id="wnr_noOfBag" style="width: 100px !important"/></td>
+            <td><input type="text" name="wnr_palletId" id="wnr_palletId" style="width: 150px !important"/></td>
+            <td><input type="text" name="wnr_gross" id="wnr_gross" style="width: 150px !important" disabled/></td>
+            <td class="textAlignCenter"><input type="checkbox" id="chkShowWNR" value="0" /></td>
+            <td class="textAlignCenter"><input type="checkbox" id="chkSaveWNR" value="0" /></td>
+            <td class="textAlignCenter"><input type="checkbox" id="chkPrintWNR" value="1" /></td>
+            <td class="textAlignCenter"><input type="button" id="btnNewWNR" value="Add" style="margin-right: 244px" name="perm_51"/></td>
+        </tr>
+    </tbody>
+</table>
+<input type="hidden" name="inst_id" id="inst_id" value="{inst_id}"/>
+<input type="hidden" name="id_warehousemap" id="id_warehousemap" value="{id_warehousemap}"/>
+<input type="hidden" name="id_warehousecell" id="id_warehousecell" value="{id_warehousecell}"/>
+<div id="wnr_content">
+    {wnr_content}
+</div>
+<div style="margin-left: 100px; margin-top: 10px">
+    <label>Completed</label>
+    <input type="checkbox" value="{status}" id="wn_status" name="wn_status" {checked}/>
+</div>
+<script>
+        $(document).ready(function() {
+            sendJsonRequest("grade", "selection_grade", {"selected_value": "{grade_id}"}, 0);
+            sendJsonRequest("packing", "selection_packing", {"selected_value": "{packing_id}"}, 0);
+            sendJsonRequest("wnr_packing", "selection_packing", {"selected_value": "{packing_id}"}, 0);
+            $("#cell_id_name").val({cell_id});
+        });
+</script>
+<!-- END: main -->
