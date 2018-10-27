@@ -1,6 +1,12 @@
 mvn install:install-file -Dfile=lib/local/jtpl-2.0.jar -DgroupId=mill.groupId -DartifactId=net.jtpl -Dversion=2.0 -Dpackaging=jar -DgeneratePom=true
 mvn install:install-file -Dfile=lib/local/client-1.0-SNAPSHOT-jar-with-dependencies.jar -DgroupId=com.hqm -DartifactId=client -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -DgroupId=javax.transaction -DartifactId=jta -Dversion=1.0.1B -Dpackaging=jar -Dfile=lib/local/jta-1.0.1B.jar
 mysql -uroot -e"SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
+
+sudo rm /var/lib/tomcat8/webapps/rooterp.war
+sudo cp /home/gmvn/rooterp/target/rooterp.war /var/lib/tomcat8/webapps/
+sudo cp /home/gmvn/rooterp/target/rooterp/ /var/lib/tomcat8/webapps/
+
 
 create fileUploads foler
 create currency
